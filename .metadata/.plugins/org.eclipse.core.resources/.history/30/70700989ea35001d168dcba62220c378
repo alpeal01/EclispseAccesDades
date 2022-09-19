@@ -1,0 +1,10 @@
+package es.florida.T1FitArch;
+import java.io.File;
+
+public class Sec1_6 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

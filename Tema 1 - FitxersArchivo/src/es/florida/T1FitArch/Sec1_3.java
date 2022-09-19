@@ -1,0 +1,25 @@
+package es.florida.T1FitArch;
+import java.io.File;
+public class Sec1_3 {
+	//Introduir una comprovació en el programa anterior per determinar si el directori existeix.
+	public static void main(String[] args) {
+		
+		File file = new File(args[0]);
+		
+
+			if(file.isDirectory()) {
+				
+				System.out.println("Existe el directori");
+				
+			}else
+			{
+				System.out.println("No existe como directorio");
+				
+			}
+		
+			
+		
+		
+		
+	}
+}

@@ -1,0 +1,7 @@
+package es.florida.holamundo;
+
+public class persona {
+
+	String nom;
+	
+}

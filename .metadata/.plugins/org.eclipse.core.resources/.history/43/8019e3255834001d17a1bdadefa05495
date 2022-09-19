@@ -1,0 +1,17 @@
+package es.florida.holamundo;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//String nom = args[0];
+		
+		System.out.print("Introduce Nombre: ");
+		Scanner teclat = new Scanner (System.in);
+		String nom = teclat.nextLine();
+		System.out.println(nom);
+
+	}
+
+}

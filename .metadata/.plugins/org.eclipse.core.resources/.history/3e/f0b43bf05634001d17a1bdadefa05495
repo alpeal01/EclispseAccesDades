@@ -1,0 +1,11 @@
+package es.florida.holamundo;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String nom = arg[0];
+		System.out.println(nom);
+
+	}
+
+}

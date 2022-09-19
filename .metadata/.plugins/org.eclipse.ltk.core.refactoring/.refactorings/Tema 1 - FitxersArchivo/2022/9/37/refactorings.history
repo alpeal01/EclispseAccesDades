@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;es.florida.T1FitArch.ej1&apos; to &apos;Sec1_1&apos;&#x0D;&#x0A;- Original project: &apos;Tema 1 - FitxersArchivo&apos;&#x0D;&#x0A;- Original element: &apos;es.florida.T1FitArch.ej1&apos;&#x0D;&#x0A;- Renamed element: &apos;es.florida.T1FitArch.Sec1_1&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ej1&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;es.florida.T1FitArch{ej1.java[ej1" matchStrategy="1" name="Sec1_1" qualified="false" references="true" similarDeclarations="false" stamp="1663346813935" textual="false" version="1.0"/>
+</session>
