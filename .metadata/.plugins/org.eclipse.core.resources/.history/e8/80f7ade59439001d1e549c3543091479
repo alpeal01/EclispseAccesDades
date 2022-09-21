@@ -13,7 +13,7 @@ public class Sec1_3 {
 				
 			}else
 			{
-				System.out.println("No existe como directori");
+				System.out.println("No existe como directorio");
 				
 			}
 		
