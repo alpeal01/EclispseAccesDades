@@ -2,7 +2,7 @@ package es.florida.T1FitArch;
 
 import java.io.File;
 import java.io.FilenameFilter;
-
+import java.util.Iterator;
 
 public class Sec1_7 {
 	public static void main(String[] args) {
