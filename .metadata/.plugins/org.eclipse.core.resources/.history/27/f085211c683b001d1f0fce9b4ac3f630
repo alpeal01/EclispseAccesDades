@@ -1,0 +1,142 @@
+package es.florida.T1FitArch;
+
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+
+public class Sec1_9 {
+	static void getInformacio(File f) {
+		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+		String mostrar;
+		System.out.println("-----Listado-----");
+		
+			mostrar="";
+			
+			
+			
+			mostrar += f.getName();
+			
+			if(f.isDirectory()) {
+				mostrar += "\nDirectorio: ";
+				
+				
+				String[] l = f.list();
+				
+				for (String arch : l) {
+					
+					mostrar += arch+"|";
+				}
+				
+				mostrar += "\nFree Space: " + f.getFreeSpace();
+				mostrar += "\nTotal Space: " + f.getTotalSpace();
+				
+			}
+			else {
+				mostrar += "\nArchivo "+ "size: "+f.getTotalSpace();
+			}
+		
+			mostrar += "\n"+ f.getAbsolutePath();
+			
+			mostrar += "\nLast modified:  " + df.format(f.lastModified()) ;
+			
+			if(f.isHidden()) {
+				mostrar += "\n"+ " Oculto";
+			}else
+				mostrar += "\n" + "Visible";
+			
+			System.out.println(mostrar);
+			
+		}
+		
+		
+	
+	static void creaCarpeta(File f) {
+		
+		File carp=new File("test");;
+		
+		if(carp.mkdir()) {
+			
+				System.out.println("Carpeta creada");
+	
+		}else {
+			System.out.println("La ruta no es un directorio");
+		}
+		
+		
+	}
+	
+	static void creaFitxer() {
+		
+	}
+	
+	static void elimina() {
+		
+	}
+	
+	static void renomena() {
+		
+	}
+	
+	
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		File f = new File (args[0]);
+		
+		boolean loop = true;
+		int op;
+		
+		do {
+			
+			
+			
+			System.out.println("------Menu-----");
+			System.out.println("1) Informacion");
+			System.out.println("2) Crear Carpeta");
+			System.out.println("3) Crear Fichero");
+			System.out.println("4) Eliminar Fichero");
+			System.out.println("5) Renombrar Fichero");
+			System.out.println("6) Cerrar");
+			
+			op = sc.nextInt();
+			
+			switch (op) {
+			case 1: {
+				
+				getInformacio(f);
+				break;
+				
+			}
+			case 2:{
+				
+				creaCarpeta(f);
+				break;
+				
+			}
+			case 3:{
+				creaFitxer();
+				break;
+			}
+			case 4:{
+				elimina();
+				break;
+			}
+			case 5:{
+				renomena();
+				break;
+			}
+			case 6:{
+				loop = false;
+			}
+			default:
+				throw new IllegalArgumentException("Unexpected value: " + op);
+			}
+			
+		}while(loop);
+		sc.close();
+	}
+
+}
