@@ -42,6 +42,7 @@ public class Sec1_9 {
 			mostrar += "\n" + "Visible";
 
 		System.out.println(mostrar);
+		
 
 	}
 
@@ -59,7 +60,8 @@ public class Sec1_9 {
 		} else {
 			System.out.println("La ruta no es un directorio");
 		}
-
+		
+		
 		return carp;
 	}
 
@@ -83,7 +85,7 @@ public class Sec1_9 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
 	}
 
 	static void elimina(File f) {
@@ -98,9 +100,11 @@ public class Sec1_9 {
 		System.out.println("Indica nombre nuevo");
 		String newName = sc.nextLine();
 		
-		File newDir = new File(f.getAbsolutePath() + "/" + newName);
+		File newDir = new File(f.getParent() + "/" + newName);
 		
-		newDir.renameTo(newDir);
+		f.renameTo(newDir);
+		System.out.println("Archivo renombrado");
+		
 	}
 
 	public static void main(String[] args) {
@@ -109,6 +113,7 @@ public class Sec1_9 {
 		File lastCarp = new File("Null");
 
 		File f = new File(args[0]);
+	
 
 		boolean loop = true;
 		int op;
@@ -147,11 +152,12 @@ public class Sec1_9 {
 				break;
 			}
 			case 5: {
-				renomena();
+				renomena(f);
 				break;
 			}
 			case 6: {
 				loop = false;
+				break;
 			}
 			default:
 				throw new IllegalArgumentException("Unexpected value: " + op);

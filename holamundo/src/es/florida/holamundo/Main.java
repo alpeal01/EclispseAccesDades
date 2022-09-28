@@ -1,6 +1,5 @@
 package es.florida.holamundo;
 
-import java.util.Scanner;
 
 public class Main {
 
