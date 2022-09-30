@@ -1,1 +1,0 @@
-El código PHP suele ser procesado en un servidor web por un intérprete PHP implementado como un módulo, 

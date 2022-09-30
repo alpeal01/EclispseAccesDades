@@ -17,15 +17,19 @@ public class Sec2_6 {
 	public static void main(String[] args) {
 
 		File f = new File(args[0]);
-		String line = "";
-
+		String line;
+		String lines="";
+		
 		try {
 			FileReader fReader = new FileReader(f);
 
 			BufferedReader buffReader = new BufferedReader(fReader);
 
 			try {
-				line += buffReader.readLine();
+				while( (  line = buffReader.readLine())!= null) {
+							
+						lines += line + "\n";
+				}
 				
 				buffReader.close();
 				fReader.close();
@@ -38,7 +42,7 @@ public class Sec2_6 {
 				FileWriter fWriter = new FileWriter(copFile);
 				BufferedWriter buffWriter = new BufferedWriter(fWriter);
 				
-				buffWriter.write(line);
+				buffWriter.write(lines);
 				
 				buffWriter.close();
 
