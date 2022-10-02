@@ -1,0 +1,40 @@
+package es.florida.T1FitArch.Sec2_9;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+public class Modelo {
+
+	
+	public Modelo() {}
+	
+	
+	public static String cargarArchivo(String dir) {
+		
+		String text = "";
+		try {
+			FileReader fr = new FileReader(dir);
+			
+			BufferedReader bfr = new BufferedReader(fr);
+			
+			
+			
+			text += bfr.readLine();
+			
+			bfr.close();
+			
+
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+		
+		return (text);
+		
+		
+	}
+}
