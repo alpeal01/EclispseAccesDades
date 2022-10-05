@@ -7,96 +7,109 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+
 public class Modelo {
 
-	public Modelo() {
-	}
-
-	public String cargarArchivo(String dir) {
-
+	
+	public Modelo() {}
+	
+	
+	public  String cargarArchivo(String dir) {
+		
 		String text = "";
 		String line;
 		try {
 			FileReader fr = new FileReader(dir);
-
+			
 			BufferedReader bfr = new BufferedReader(fr);
-
-			while ((line = bfr.readLine()) != null) {
-				text += line;
+			
+			
+			
+			while((line = bfr.readLine())!=null) {
+				text+= line;
 				text += "\n";
 			}
-
+			
 			bfr.close();
+			
 
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-
+			
 		}
 		return (text);
-
+		
+		
 	}
-
-	public int countWord(String text, String word) {
-
-		String[] list = text.split(" ");
+	
+	public  int countWord(String text,String word) {
+		
+		String [] list = text.split(" ");
 		int count = 0;
-
+		
 		for (String letter : list) {
-
-			if (letter.equals(word)) {
+			
+			if(letter.equals(word)) {
 				count++;
 			}
-
+			
 		}
 		return count;
-
+		
+		
 	}
-
-	public String reemText(String text, String bWord, String rWord, String dir) {
-
-		String[] list = text.split(" ");
+	
+	public  String reemText(String text,String bWord,String rWord,String dir) {
+		
+		String [] list = text.split(" ");
 		String newText = "";
-
-		for (int i = 0; i < list.length; i++) {
-
-			if (list[i].equals(bWord)) {
-				list[i] = rWord;
+		
+		for (int i = 0; i < list.length;i++) {
+			
+			if(list[i].equals(bWord) ) {
+				list[i]= rWord;
 			}
-
-			newText += list[i] + " ";
+			
+			newText+= list[i] + " ";
 		}
 		File fdir = new File(dir);
-
-		writeText(fdir, newText);
-
+		writeText( fdir, text);
+		
 		return newText;
 	}
-
-	void writeText(File f, String text) {
-
-		String dir;
-		try {
-			dir = f.getParent();
-
-			dir += "/" + "copia.txt";
-
-			f = new File(dir);
-
-			f.createNewFile();
-
-			FileWriter fw = new FileWriter(f);
-
-			BufferedWriter bfw = new BufferedWriter(fw);
-
-			bfw.write(text);
 	
+	void writeText(File f,String text) {
+		
+		
+		String dir = f.getPath();
+		
+		dir += "/"+"copia.txt";
+		
+		f = new File(dir);
+		
+		try {
+			f.createNewFile();
+			
+			FileWriter fw = new FileWriter(f);
+			
+			BufferedWriter bfw = new BufferedWriter(fw);
+			
+			bfw.write(text);
+			
+			 fw.close();
+			 bfw.close();
+			
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-
+		
+		
+		
 	}
-
+	
 }

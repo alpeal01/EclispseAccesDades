@@ -7,9 +7,6 @@
     <fullyQualifiedTypeName name="java.io.Reader"/>
     <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="java.io.FileWriter"/>
-    <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
     <fullyQualifiedTypeName name="java.sql.Timestamp"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
@@ -20,4 +17,7 @@
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 </qualifiedTypeNameHistroy>

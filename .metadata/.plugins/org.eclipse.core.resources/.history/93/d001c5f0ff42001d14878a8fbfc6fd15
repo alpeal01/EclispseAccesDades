@@ -90,12 +90,14 @@ public class Modelo {
 			BufferedWriter bfw = new BufferedWriter(fw);
 
 			bfw.write(text);
-	
+
+			fw.close();
+			bfw.close();
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
 	}
 

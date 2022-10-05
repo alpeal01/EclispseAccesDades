@@ -38,7 +38,7 @@ public class Controlador {
 		vista.getBtnRemplazar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				vista.getTxtArRem().setText(modelo.reemText(modelo.cargarArchivo(vista.gettxtDir().getText()), vista.getTxtBuscar().getText(),vista.getTxtReemplazar().getText(),vista.gettxtDir().getText()));
+				vista.getTxtArRem().setText(modelo.reemText(modelo.cargarArchivo(vista.gettxtDir().getText()), vista.getTxtBuscar().getText(),vista.getTxtReemplazar().getText()));
 				
 			}
 		}
