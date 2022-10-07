@@ -23,7 +23,7 @@ public class Modelo {
 
 			 return "ARCHIVO"+"\nNombre: "+ fName[0]+
 					 "\nExtensión: " +fName[1] +
-					 "\nTamaño: "+dFile.getTotalSpace()+
+					 "\nTamaño: "+dFile.getTotalSpace()+" bytes"+
 					 "\nFecha creación: "+ df.format(dFile.lastModified())+
 					 "\nUbicación: "+dFile.getAbsolutePath();
 		
