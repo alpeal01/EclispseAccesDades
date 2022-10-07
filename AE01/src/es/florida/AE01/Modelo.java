@@ -14,20 +14,14 @@ public class Modelo {
 		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 
 		
-		
+		if(dFile.exists()) {
 		if(dFile.isFile()) {
 				
-			String[] fName; 
-		
-			String name = dFile.getName();
+			String[] fName = dFile.getName().split("\\.");
+
 			
-			fName = name.split("\\.");
-			
-			
-		
-			
-			 return "ARCHIVO"+"\nNombre: "+ dFile.getName()+
-					 "\nExtensión: " +dFile.getName() +
+			 return "ARCHIVO"+"\nNombre: "+ fName[0]+
+					 "\nExtensión: " +fName[1] +
 					 "\nTamaño: "+dFile.getTotalSpace()+
 					 "\nFecha creación: "+ df.format(dFile.lastModified())+
 					 "\nUbicación: "+dFile.getAbsolutePath();
@@ -47,7 +41,9 @@ public class Modelo {
 			
 		}
 		
-		
+		}else {
+			return "Ruta no existe";
+		}
 	}
 
 }
