@@ -1,6 +1,7 @@
 package es.florida.AE01;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 
 public class Modelo {
 	
@@ -10,6 +11,7 @@ public class Modelo {
 		File dFile= new File (dir);
 		String [] list;
 		String arch = "";
+		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 
 		
 		
@@ -19,7 +21,7 @@ public class Modelo {
 			 return "ARCHIVO"+"\nNombre: "+ dFile.getName()+
 					 "\nExtensión: " +dFile.getName() +
 					 "\nTamaño: "+dFile.getTotalSpace()+
-					 "\nFecha creación: "+dFile.lastModified()+
+					 "\nFecha creación: "+ df.format(dFile.lastModified())+
 					 "\nUbicación: "+dFile.getAbsolutePath();
 		
 		}
