@@ -16,7 +16,15 @@ public class Modelo {
 		
 		
 		if(dFile.isFile()) {
-	
+				
+			String[] fName; 
+		
+			String name = dFile.getName();
+			
+			fName = name.split("\\.");
+			
+			
+		
 			
 			 return "ARCHIVO"+"\nNombre: "+ dFile.getName()+
 					 "\nExtensión: " +dFile.getName() +
