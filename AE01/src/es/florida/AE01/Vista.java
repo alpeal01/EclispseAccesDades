@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import javax.swing.JList;
 
 public class Vista extends JFrame {
 
@@ -15,6 +16,7 @@ public class Vista extends JFrame {
 	private JTextField txtBusq;
 	JTextArea txtArMost;
 	JButton btnBusq;
+	JList list;
 	
 	public JTextArea getTxtArMost() {
 		return this.txtArMost;
@@ -26,6 +28,10 @@ public class Vista extends JFrame {
 	
 	public JButton getBtnBusq() {
 		return this.btnBusq;
+	}
+	
+	public JList getList() {
+		return this.list;
 	}
 
 	/**
@@ -50,7 +56,7 @@ public class Vista extends JFrame {
 	public Vista() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 601, 361);
+		setBounds(100, 100, 617, 392);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -58,17 +64,22 @@ public class Vista extends JFrame {
 		contentPane.setLayout(null);
 		
 		txtBusq = new JTextField();
-		txtBusq.setBounds(10, 269, 158, 19);
+		txtBusq.setBounds(162, 5, 336, 19);
 		contentPane.add(txtBusq);
 		txtBusq.setColumns(10);
 		
 		btnBusq = new JButton("Buscar");
-		btnBusq.setBounds(178, 268, 85, 21);
+		btnBusq.setBounds(508, 4, 85, 21);
 		contentPane.add(btnBusq);
 		
 		txtArMost = new JTextArea();
-		txtArMost.setBounds(10, 10, 431, 225);
+		txtArMost.setEditable(false);
+		txtArMost.setBounds(162, 34, 431, 225);
 		contentPane.add(txtArMost);
+		
+		list = new JList();
+		list.setBounds(10, 23, 142, 236);
+		contentPane.add(list);
 		
 		this.setVisible(true);
 	}
