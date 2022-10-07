@@ -20,15 +20,10 @@ public class Modelo {
 			String[] fName = dFile.getName().split("\\.");
 
 			
-<<<<<<< Updated upstream
+
 			 return "ARCHIVO"+"\nNombre: "+ fName[0]+
 					 "\nExtensión: " +fName[1] +
 					 "\nTamaño: "+dFile.getTotalSpace()+
-=======
-			 return "ARCHIVO"+"\nNombre: "+ dFile.getName()+
-					 "\nExtensión: " +dFile.getName() +
-					 "\nTamaño: "+dFile.getTotalSpace() +
->>>>>>> Stashed changes
 					 "\nFecha creación: "+ df.format(dFile.lastModified())+
 					 "\nUbicación: "+dFile.getAbsolutePath();
 		
