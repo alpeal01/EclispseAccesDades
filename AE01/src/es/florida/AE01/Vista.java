@@ -1,6 +1,7 @@
 package es.florida.AE01;
 
 import java.awt.EventQueue;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,7 +17,7 @@ public class Vista extends JFrame {
 	private JTextField txtBusq;
 	JTextArea txtArMost;
 	JButton btnBusq;
-	JList list;
+	JList<String> list;
 	
 	public JTextArea getTxtArMost() {
 		return this.txtArMost;
@@ -30,10 +31,12 @@ public class Vista extends JFrame {
 		return this.btnBusq;
 	}
 	
-	public JList getList() {
+	public JList<String> getList() {
 		return this.list;
 	}
-
+	public void setList(ArrayList <String>listFich) {
+		this.list = new JList<String>(listFich.toArray(new String[listFich.size()]));
+	}
 	/**
 	 * Launch the application.
 	 */
@@ -77,10 +80,12 @@ public class Vista extends JFrame {
 		txtArMost.setBounds(162, 34, 431, 225);
 		contentPane.add(txtArMost);
 		
-		list = new JList();
+		list = new JList<String>();
 		list.setBounds(10, 23, 142, 236);
 		contentPane.add(list);
 		
+		
 		this.setVisible(true);
 	}
+
 }

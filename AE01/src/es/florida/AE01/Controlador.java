@@ -23,7 +23,9 @@ public class Controlador {
 			
 			public void actionPerformed(ActionEvent e) {
 				
-				vista.getTxtArMost().setText(modelo.listFich(vista.getTxtBusq().getText()));
+				
+				vista.getList().setListData(modelo.listFich(vista.getTxtBusq().getText()));
+				//modelo.listFich(vista.getTxtBusq().getText())
 				
 			}
 			
