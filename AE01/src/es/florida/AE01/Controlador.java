@@ -18,19 +18,19 @@ public class Controlador {
 
 	// Mètode per afegir els listeners als elements que els generen (botons)
 	public void initEventHandlers() {
-		
+
 		vista.getBtnBusq().addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
-				
-				
+
 				vista.getList().setListData(modelo.listFich(vista.getTxtBusq().getText()));
-				//modelo.listFich(vista.getTxtBusq().getText())
 				
+				vista.getTxtArMost().setText(modelo.cargaContendio(vista.getTxtBusq().getText()));
+				
+
 			}
-			
+
 		});
-		
 
 	}
 
