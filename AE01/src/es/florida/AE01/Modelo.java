@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Modelo {
 
 	// Lista el directiorio pasado por parametro y devuelve su contenido, si es un
-	// archvio de lectura mostrara
+	// archivo de lectura mostrará
 	// su información.
 	public String[] listFich(String dir) {
 

@@ -2,6 +2,7 @@ package es.florida.AE01;
 
 import java.awt.EventQueue;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,6 +11,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JList;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Vista extends JFrame {
 
@@ -82,7 +85,25 @@ public class Vista extends JFrame {
 		contentPane.add(txtArMost);
 
 		list = new JList<String>();
-		list.setBounds(10, 23, 142, 236);
+		list.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				String texto = txtBusq.getText(); // ./
+				int index = list.getSelectedIndex();
+				//List<String> listaBusqueda = new ArrayList<String>();
+				String s = (String) list.getSelectedValue(); // .classpath
+				if (texto.equals(texto + s + "/")) { // ./.classpath/ == ./.classpath/.classpath/
+
+				} else {
+					texto = txtBusq.getText() + s + "/";
+					System.out.println(texto);
+					txtBusq.setText(texto);
+				}
+
+			}
+		});
+		list.setBounds(10, 34, 142, 225);
 		contentPane.add(list);
 
 		this.setVisible(true);
