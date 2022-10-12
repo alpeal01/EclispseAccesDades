@@ -22,12 +22,14 @@ public class Vista extends JFrame {
 	JButton btnBusq;
 	JList<String> list;
 	private JTextField txtEncontrar;
-	JButton btnEncontrar ;
+	JButton btnEncontrar;
 	private JEditorPane txtArMost;
 	JButton btnCrear;
 	private JButton btnCopiar;
 	private JButton btnCNombre;
 	private JButton btnBorrar;
+	JButton btnRemplazar;
+	private JTextField txtReemplazar;
 
 	public JEditorPane getTxtArMost() {
 		return this.txtArMost;
@@ -44,17 +46,17 @@ public class Vista extends JFrame {
 	public JList<String> getList() {
 		return this.list;
 	}
-	
-	public JButton getBtnEncontrar () {
-		
+
+	public JButton getBtnEncontrar() {
+
 		return this.btnEncontrar;
-		
+
 	}
-	
-	public  JTextField getTxtEncontrar() {
+
+	public JTextField getTxtEncontrar() {
 		return this.txtEncontrar;
 	}
-	
+
 	public JButton getBtnCrear() {
 		return this.btnCrear;
 	}
@@ -62,12 +64,27 @@ public class Vista extends JFrame {
 	public void setList(ArrayList<String> listFich) {
 		this.list = new JList<String>(listFich.toArray(new String[listFich.size()]));
 	}
-	
-	// Intento de hacer que la jlist no funcione cuando mostramos información de un archivo (no funciona)
+
+	// Intento de hacer que la jlist no funcione cuando mostramos información de un
+	// archivo (no funciona)
 	public void enableList(boolean t) {
 		this.list.setEnabled(t);
 	}
+
+	public JButton getBtnRemplazar() {
+
+		return this.btnRemplazar;
+
+	}
 	
+	public JTextField getTxtReemplazar() {
+		return this.txtReemplazar;
+	}
+	
+	
+	
+	
+
 	/**
 	 * Launch the application.
 	 */
@@ -109,36 +126,45 @@ public class Vista extends JFrame {
 		list = new JList<String>();
 		list.setBounds(10, 34, 142, 225);
 		contentPane.add(list);
-		
+
 		txtEncontrar = new JTextField();
 		txtEncontrar.setBounds(297, 270, 142, 20);
 		contentPane.add(txtEncontrar);
 		txtEncontrar.setColumns(10);
-		
+
 		btnEncontrar = new JButton("Encontrar palabra");
 		btnEncontrar.setBounds(449, 269, 139, 23);
 		contentPane.add(btnEncontrar);
-		
+
 		txtArMost = new JEditorPane();
 		txtArMost.setBounds(162, 39, 429, 220);
 		contentPane.add(txtArMost);
 		txtArMost.setContentType("text/html");
-		
+
 		JButton btnCrear = new JButton("Crear");
 		btnCrear.setBounds(10, 270, 89, 23);
 		contentPane.add(btnCrear);
-		
+
 		btnCopiar = new JButton("Copiar");
 		btnCopiar.setBounds(118, 269, 89, 23);
 		contentPane.add(btnCopiar);
-		
+
 		btnCNombre = new JButton("Cambiar nombre");
-		btnCNombre.setBounds(118, 322, 111, 23);
+		btnCNombre.setBounds(109, 322, 111, 23);
 		contentPane.add(btnCNombre);
-		
+
 		btnBorrar = new JButton("Borrar");
 		btnBorrar.setBounds(10, 322, 89, 23);
 		contentPane.add(btnBorrar);
+
+		btnRemplazar = new JButton("Reemplazar");
+		btnRemplazar.setBounds(449, 303, 139, 23);
+		contentPane.add(btnRemplazar);
+		
+		txtReemplazar = new JTextField();
+		txtReemplazar.setColumns(10);
+		txtReemplazar.setBounds(297, 304, 142, 20);
+		contentPane.add(txtReemplazar);
 
 		this.setVisible(true);
 	}

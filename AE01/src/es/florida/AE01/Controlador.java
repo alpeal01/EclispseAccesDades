@@ -60,13 +60,10 @@ public class Controlador {
 		vista.getBtnEncontrar().addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				
-				
 
-				String [] conetnt = (modelo.cargaContendio(vista.getTxtBusq().getText())).split(" ");
+				String [] conetnt = (vista.getTxtArMost().getText().split(" "));
 				String textFinal="";
 				String busqWord = vista.getTxtEncontrar().getText();
-				//<H1><FONT COLOR=white>The text is white</H1>
 				for (String word : conetnt) {
 					
 					if(word.equals(busqWord)) {
@@ -93,6 +90,21 @@ public class Controlador {
 			}
 
 		});
+		
+		
+		
+		
+		vista.getBtnRemplazar().addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				vista.getTxtArMost().setText( modelo.reemplazar(modelo.cargaContendio(vista.getTxtBusq().getText()), vista.getTxtEncontrar().getText(), vista.getTxtReemplazar().getText()));
+				
+				
+			}
+			});
+		
 		
 		
 		

@@ -1,8 +1,10 @@
 package es.florida.AE01;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -88,6 +90,62 @@ public class Modelo {
 
 		return "";
 
+	}
+	
+	
+	public void guardarcCambios(String text, String dir) {
+		
+		
+	
+		File ruta = new File(dir);
+		
+		if (ruta.isFile()){
+		
+		FileWriter fw;
+		try {
+			fw = new FileWriter(ruta);
+			
+			BufferedWriter buffWrite = new BufferedWriter (fw);
+			
+			buffWrite.write(text);
+			
+			buffWrite.close();
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		}
+		
+			
+		
+	}
+	
+	public String reemplazar(String text, String palEnont, String reemplazo ) {
+		
+		
+		String [] list = text.split(" ");
+		String newText = "";
+		
+		for (String word : list) {
+			
+			if(word.equals(palEnont)) {
+				
+				newText +=  reemplazo + " ";
+				
+			}else
+				newText +=  word + " ";
+			
+		}
+		
+		return newText;
+		
+		
+		
+		
+		
 	}
 
 }
