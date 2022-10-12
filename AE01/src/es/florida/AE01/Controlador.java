@@ -19,7 +19,7 @@ public class Controlador {
 		initEventHandlers();
 	}
 
-	// Mètode per afegir els listeners als elements que els generen (botons)
+	// Métode per afegir els listeners als elements que els generen (botons)
 	public void initEventHandlers() {
 
 		vista.getBtnBusq().addActionListener(new ActionListener() {
@@ -35,23 +35,27 @@ public class Controlador {
 
 		});
 		
-//		vista.getList().addMouseListener(new MouseAdapter() {
-//			@Override
-//			public void mouseClicked(MouseEvent e) {
-//				
-//				String texto = vista.getTxtBusq().getText(); // ./
-//				//List<String> listaBusqueda = new ArrayList<String>();
-//				String s = (String) vista.getList().getSelectedValue(); // .classpath
-//				if (texto.equals(texto + s + "/")) { // ./.classpath/ == ./.classpath/.classpath/
-//
-//				} else {
-//					texto = vista.getTxtBusq().getText() + s + "/";
-//					System.out.println(texto);
-//					vista.getTxtBusq().setText(texto);
-//				}
-//
-//			}
-//		});
+		// Métode que permiteix la selecció d'un element de la llista donant click
+		vista.getList().addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				String texto = vista.getTxtBusq().getText(); // ./
+				String seleccionado;
+				texto.split("/");
+				seleccionado = (String) vista.getList().getSelectedValue(); // .classpath
+				System.out.println(seleccionado);
+				System.out.println(texto.indexOf(seleccionado));
+				if (texto.indexOf(seleccionado) >= 0) { // ./.classpath/ == ./.classpath/.classpath/
+					System.out.println("Already written");
+				} else {
+					texto = vista.getTxtBusq().getText() + seleccionado + "/";
+					System.out.println(texto);
+					vista.getTxtBusq().setText(texto);
+				}
+
+			}
+		});
 
 		vista.getBtnEncontrar().addActionListener(new ActionListener() {
 
@@ -79,6 +83,9 @@ public class Controlador {
 				
 				
 				vista.getTxtArMost().setText(textFinal);
+				
+				// Intento de hacer que la jlist no funcione cuando mostramos información de un archivo (no funciona)
+				vista.enableList(false);
 				
 				
 				

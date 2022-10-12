@@ -24,6 +24,10 @@ public class Vista extends JFrame {
 	private JTextField txtEncontrar;
 	JButton btnEncontrar ;
 	private JEditorPane txtArMost;
+	JButton btnCrear;
+	private JButton btnCopiar;
+	private JButton btnCNombre;
+	private JButton btnBorrar;
 
 	public JEditorPane getTxtArMost() {
 		return this.txtArMost;
@@ -50,9 +54,18 @@ public class Vista extends JFrame {
 	public  JTextField getTxtEncontrar() {
 		return this.txtEncontrar;
 	}
+	
+	public JButton getBtnCrear() {
+		return this.btnCrear;
+	}
 
 	public void setList(ArrayList<String> listFich) {
 		this.list = new JList<String>(listFich.toArray(new String[listFich.size()]));
+	}
+	
+	// Intento de hacer que la jlist no funcione cuando mostramos información de un archivo (no funciona)
+	public void enableList(boolean t) {
+		this.list.setEnabled(t);
 	}
 	
 	/**
@@ -94,24 +107,6 @@ public class Vista extends JFrame {
 		contentPane.add(btnBusq);
 
 		list = new JList<String>();
-		list.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				
-				String texto = txtBusq.getText(); // ./
-				int index = list.getSelectedIndex();
-				//List<String> listaBusqueda = new ArrayList<String>();
-				String s = (String) list.getSelectedValue(); // .classpath
-				if (texto.equals(texto + s + "/")) { // ./.classpath/ == ./.classpath/.classpath/
-
-				} else {
-					texto = txtBusq.getText() + s + "/";
-					System.out.println(texto);
-					txtBusq.setText(texto);
-				}
-
-			}
-		});
 		list.setBounds(10, 34, 142, 225);
 		contentPane.add(list);
 		
@@ -128,6 +123,22 @@ public class Vista extends JFrame {
 		txtArMost.setBounds(162, 39, 429, 220);
 		contentPane.add(txtArMost);
 		txtArMost.setContentType("text/html");
+		
+		JButton btnCrear = new JButton("Crear");
+		btnCrear.setBounds(10, 270, 89, 23);
+		contentPane.add(btnCrear);
+		
+		btnCopiar = new JButton("Copiar");
+		btnCopiar.setBounds(118, 269, 89, 23);
+		contentPane.add(btnCopiar);
+		
+		btnCNombre = new JButton("Cambiar nombre");
+		btnCNombre.setBounds(118, 322, 111, 23);
+		contentPane.add(btnCNombre);
+		
+		btnBorrar = new JButton("Borrar");
+		btnBorrar.setBounds(10, 322, 89, 23);
+		contentPane.add(btnBorrar);
 
 		this.setVisible(true);
 	}
