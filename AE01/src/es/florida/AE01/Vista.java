@@ -8,12 +8,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
+import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JList;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JEditorPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Vista extends JFrame {
 
@@ -24,12 +27,13 @@ public class Vista extends JFrame {
 	private JTextField txtEncontrar;
 	JButton btnEncontrar;
 	private JEditorPane txtArMost;
-	JButton btnCrear;
 	private JButton btnCopiar;
 	private JButton btnCNombre;
 	private JButton btnBorrar;
 	JButton btnRemplazar;
 	private JTextField txtReemplazar;
+	private JTextField txtAcciones;
+	JButton btnCreacion;
 
 	public JEditorPane getTxtArMost() {
 		return this.txtArMost;
@@ -37,6 +41,14 @@ public class Vista extends JFrame {
 
 	public JTextField getTxtBusq() {
 		return this.txtBusq;
+	}
+	
+	public JTextField getTxtAcciones() {
+		return txtAcciones;
+	}
+
+	public void setTxtAcciones(JTextField txtAcciones) {
+		this.txtAcciones = txtAcciones;
 	}
 
 	public JButton getBtnBusq() {
@@ -57,16 +69,12 @@ public class Vista extends JFrame {
 		return this.txtEncontrar;
 	}
 
-	public JButton getBtnCrear() {
-		return this.btnCrear;
-	}
-
 	public void setList(ArrayList<String> listFich) {
 		this.list = new JList<String>(listFich.toArray(new String[listFich.size()]));
 	}
 
 	// Intento de hacer que la jlist no funcione cuando mostramos información de un
-	// archivo (no funciona)
+	// archivo (¿funciona?)
 	public void enableList(boolean t) {
 		this.list.setEnabled(t);
 	}
@@ -81,7 +89,38 @@ public class Vista extends JFrame {
 		return this.txtReemplazar;
 	}
 	
+	public JButton getBtnCopiar() {
+		return btnCopiar;
+	}
+
+	public void setBtnCopiar(JButton btnCopiar) {
+		this.btnCopiar = btnCopiar;
+	}
+
+	public JButton getBtnCreacion() {
+		return btnCreacion;
+	}
+
+	public void setBtnCreacion(JButton btnCreacion) {
+		this.btnCreacion = btnCreacion;
+	}
 	
+	public JButton getBtnBorrar() {
+		return btnBorrar;
+	}
+
+	public void setBtnBorrar(JButton btnBorrar) {
+		this.btnBorrar = btnBorrar;
+	}
+
+	public JButton getBtnCNombre() {
+		return btnCNombre;
+	}
+
+	public void setBtnCNombre(JButton btnCNombre) {
+		this.btnCNombre = btnCNombre;
+	}
+
 	
 	
 
@@ -100,6 +139,8 @@ public class Vista extends JFrame {
 //			}
 //		});
 //	}
+
+	
 
 	/**
 	 * Create the frame.
@@ -124,7 +165,7 @@ public class Vista extends JFrame {
 		contentPane.add(btnBusq);
 
 		list = new JList<String>();
-		list.setBounds(10, 34, 142, 225);
+		list.setBounds(10, 39, 142, 220);
 		contentPane.add(list);
 
 		txtEncontrar = new JTextField();
@@ -141,20 +182,16 @@ public class Vista extends JFrame {
 		contentPane.add(txtArMost);
 		txtArMost.setContentType("text/html");
 
-		JButton btnCrear = new JButton("Crear");
-		btnCrear.setBounds(10, 270, 89, 23);
-		contentPane.add(btnCrear);
-
 		btnCopiar = new JButton("Copiar");
-		btnCopiar.setBounds(118, 269, 89, 23);
+		btnCopiar.setBounds(131, 270, 89, 23);
 		contentPane.add(btnCopiar);
 
 		btnCNombre = new JButton("Cambiar nombre");
-		btnCNombre.setBounds(109, 322, 111, 23);
+		btnCNombre.setBounds(109, 303, 133, 23);
 		contentPane.add(btnCNombre);
 
 		btnBorrar = new JButton("Borrar");
-		btnBorrar.setBounds(10, 322, 89, 23);
+		btnBorrar.setBounds(10, 304, 89, 23);
 		contentPane.add(btnBorrar);
 
 		btnRemplazar = new JButton("Reemplazar");
@@ -165,6 +202,15 @@ public class Vista extends JFrame {
 		txtReemplazar.setColumns(10);
 		txtReemplazar.setBounds(297, 304, 142, 20);
 		contentPane.add(txtReemplazar);
+		
+		txtAcciones = new JTextField();
+		txtAcciones.setBounds(10, 340, 232, 20);
+		contentPane.add(txtAcciones);
+		txtAcciones.setColumns(10);
+		
+		JButton btnCreacion = new JButton("Crear");
+		btnCreacion.setBounds(10, 269, 89, 23);
+		contentPane.add(btnCreacion);
 
 		this.setVisible(true);
 	}

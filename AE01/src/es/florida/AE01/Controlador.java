@@ -5,6 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import javax.swing.JOptionPane;
 
@@ -27,19 +34,18 @@ public class Controlador {
 			public void actionPerformed(ActionEvent e) {
 
 				vista.getList().setListData(modelo.listFich(vista.getTxtBusq().getText()));
-				
+
 				vista.getTxtArMost().setText(modelo.cargaContendio(vista.getTxtBusq().getText()));
-				
 
 			}
 
 		});
-		
+
 		// Métode que permiteix la selecció d'un element de la llista donant click
 		vista.getList().addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+
 				String texto = vista.getTxtBusq().getText(); // ./
 				String seleccionado;
 				texto.split("/");
@@ -61,60 +67,83 @@ public class Controlador {
 
 			public void actionPerformed(ActionEvent e) {
 
-				String [] conetnt = (vista.getTxtArMost().getText().split(" "));
-				String textFinal="";
+				String[] conetnt = (vista.getTxtArMost().getText().split(" "));
+				String textFinal = "";
 				String busqWord = vista.getTxtEncontrar().getText();
 				for (String word : conetnt) {
-					
-					if(word.equals(busqWord)) {
-						
-						textFinal+= "<H1>"+word+"</H1>";
-						textFinal+=" ";
-						
-					}else {
-						textFinal+=word;
-						textFinal+=" ";
+
+					if (word.equals(busqWord)) {
+
+						textFinal += "<H1>" + word + "</H1>";
+						textFinal += " ";
+
+					} else {
+						textFinal += word;
+						textFinal += " ";
 					}
-					
+
 				}
-				
-				
+
 				vista.getTxtArMost().setText(textFinal);
-				
-				// Intento de hacer que la jlist no funcione cuando mostramos información de un archivo (no funciona)
 				vista.enableList(false);
-				
-				
-				
 
 			}
 
 		});
-		
-		
-		
-		
+
 		vista.getBtnRemplazar().addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				
-				
-				vista.getTxtArMost().setText( modelo.reemplazar(modelo.cargaContendio(vista.getTxtBusq().getText()), vista.getTxtEncontrar().getText(), vista.getTxtReemplazar().getText()));
-				
-				
+
+				vista.getTxtArMost().setText(modelo.reemplazar(modelo.cargaContendio(vista.getTxtBusq().getText()),
+						vista.getTxtEncontrar().getText(), vista.getTxtReemplazar().getText()));
+
 			}
-			});
+		});
+
+		/*// Funció que permiteix crear un fitxer en el directori actual
+		vista.getBtnCreacion().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});*/
+		
+		// Funció que permiteix copiar un fitxer del directori actual
+		vista.getBtnCopiar().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				File ruta = new File(vista.getTxtBusq().getText() + vista.getTxtAcciones().getText());
+				File cp = new File(vista.getTxtBusq().getText() + "copia.txt");
+				try {
+					Modelo.copiarArch(ruta, cp);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		
+		// Funció que permiteix borrar un element
+		vista.getBtnBorrar().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				File f = new File(vista.getTxtBusq().getText());
+				f.delete();
+			}
+		});
+		
+		// Funció que permiteix renombrar un element
+		vista.getBtnCNombre().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				File f = new File(vista.getTxtBusq().getText());
+				File r = new File(vista.getTxtAcciones().getText());
+				f.renameTo(r);
+			}
+		});
 		
 		
-		
-		
+
 	}
 
 	/*
 	 * public void iniciarVista() { vista = new Vista(); vista.setVisible(true); }
 	 */
-	
-	
-	
 
 }
