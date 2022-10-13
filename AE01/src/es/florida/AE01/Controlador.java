@@ -121,6 +121,8 @@ public class Controlador {
 		// Funció que permiteix copiar un fitxer del directori actual
 		vista.getBtnCopiar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				/* Comentado por Alvaro para que funcione la otra forma
+				
 				File ruta = new File(vista.getTxtBusq().getText() + vista.getTxtAcciones().getText());
 				File cp = new File(vista.getTxtBusq().getText() + "copia.txt");
 				try {
@@ -129,24 +131,39 @@ public class Controlador {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				*/
+				
+				modelo.dupliArch(vista.getTxtBusq().getText());
 			}
 		});
 
 		// Funció que permiteix borrar un element
 		vista.getBtnBorrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				int input = JOptionPane.showConfirmDialog(null, "Seguro que quieres borrar el archivo " + vista.getTxtBusq().getText() );
+					
+					if(input == 0) {
+				
 				File f = new File(vista.getTxtBusq().getText());
 				System.out.println(f.getPath());
 				f.delete();
+					}
 			}
 		});
 
-		// Funció que permiteix renombrar un element
+		// Funció que permiteix renombrar un elemento
 		vista.getBtnCNombre().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				File f = new File(vista.getTxtBusq().getText());
-				File r = new File(vista.getTxtAcciones().getText());
-				f.renameTo(r);
+				int input = JOptionPane.showConfirmDialog(null, "Seguro que quieres renombrar el Archivo");
+				
+				if(input == 0) {
+					
+					//funcion en M O D E L O
+					modelo.renombArch(vista.getTxtBusq().getText(),vista.getTxtAcciones().getText());
+					
+				}
+				
+			
 			}
 		});
 

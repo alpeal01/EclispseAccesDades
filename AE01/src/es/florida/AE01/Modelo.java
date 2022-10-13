@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -151,8 +152,9 @@ public class Modelo {
 		
 		
 	}
-	
+	//Copiar archivos por Héctor
 	public static void copiarArch(File source, File dest) throws IOException {
+		
 	    InputStream is = null;
 	    OutputStream os = null;
 	    try {
@@ -169,5 +171,79 @@ public class Modelo {
 	        os.close();
 	    }
 	}
+	
+	//copiar archivo por Álvaro;
+	
+	public void dupliArch(String ruta) {
+		
+		File dir = new File(ruta);
+		String content = "";
+		String line;
+		
+		if(dir.isFile()) {
+			
+			FileReader fr;
+			try {
+				fr = new FileReader(dir);
+				BufferedReader buffRead = new BufferedReader(fr);
+				
+				while((line = buffRead.readLine()) != null) {
+					
+					content += line;
+					
+					
+				}
+				buffRead.close();
+				fr.close();
+				
+				dir = new File(dir.getParent()+"/"+dir.getName()+" copia");
+				
+				dir.createNewFile();
+				
+				FileWriter fw = new FileWriter(dir);
+				
+				BufferedWriter buffWrite = new BufferedWriter(fw);
+				
+				buffWrite.write(content);
+				
+				buffWrite.close();
+				fw.close();
+				
+				
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+			
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+	public void renombArch (String dir, String newName) {
+		
+		File file = new File(dir);
+	
+	
+		if(file.isFile()) {
+			
+			File newDir = new File( file.getParent() + "/" + newName);
+			
+			System.out.println(newDir.getAbsolutePath());
+			
+			file.renameTo(newDir);
+			//./Archivos/
+		}
+
+	} 
+	
+	
 
 }
