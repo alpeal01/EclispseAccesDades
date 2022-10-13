@@ -101,12 +101,23 @@ public class Controlador {
 			}
 		});
 
-		/*// Funció que permiteix crear un fitxer en el directori actual
+		// Funció que permiteix crear un fitxer en el directori actual
 		vista.getBtnCreacion().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					File myObj = new File(vista.getTxtBusq().getText() + vista.getTxtAcciones().getText());
+					if (myObj.createNewFile()) {
+						System.out.println("File created: " + myObj.getName());
+					} else {
+						System.out.println("File already exists.");
+					}
+				} catch (IOException a) {
+					System.out.println("An error occurred.");
+					a.printStackTrace();
+				}
 			}
-		});*/
-		
+		});
+
 		// Funció que permiteix copiar un fitxer del directori actual
 		vista.getBtnCopiar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -120,15 +131,16 @@ public class Controlador {
 				}
 			}
 		});
-		
+
 		// Funció que permiteix borrar un element
 		vista.getBtnBorrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				File f = new File(vista.getTxtBusq().getText());
+				System.out.println(f.getPath());
 				f.delete();
 			}
 		});
-		
+
 		// Funció que permiteix renombrar un element
 		vista.getBtnCNombre().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -137,8 +149,6 @@ public class Controlador {
 				f.renameTo(r);
 			}
 		});
-		
-		
 
 	}
 

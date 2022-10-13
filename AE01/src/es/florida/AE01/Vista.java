@@ -96,7 +96,7 @@ public class Vista extends JFrame {
 	public void setBtnCopiar(JButton btnCopiar) {
 		this.btnCopiar = btnCopiar;
 	}
-
+	
 	public JButton getBtnCreacion() {
 		return btnCreacion;
 	}
@@ -208,7 +208,7 @@ public class Vista extends JFrame {
 		contentPane.add(txtAcciones);
 		txtAcciones.setColumns(10);
 		
-		JButton btnCreacion = new JButton("Crear");
+		btnCreacion = new JButton("Crear");
 		btnCreacion.setBounds(10, 269, 89, 23);
 		contentPane.add(btnCreacion);
 
