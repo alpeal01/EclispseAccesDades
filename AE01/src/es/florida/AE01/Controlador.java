@@ -186,7 +186,7 @@ public class Controlador {
 		vista.getBtnReiniciar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String[] stringAr = new String[1];
-				stringAr[0] = "Imagina que esto es un espacio en blanco";
+				stringAr[0] = "";
 				
 				vista.getTxtBusq().setText("");
 				vista.getTxtAcciones().setText("");
