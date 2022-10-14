@@ -59,7 +59,7 @@ public class Controlador {
 				}
 			}
 		});
-		
+
 		// Interacció en un botó que serveix per a resaltar una paraula en el text
 		vista.getBtnEncontrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -83,11 +83,10 @@ public class Controlador {
 
 				vista.getTxtArMost().setText(textFinal);
 
-
 			}
 
 		});
-		
+
 		// Funció que serveix per a reemplaçar la paraula triada per altra
 		vista.getBtnRemplazar().addActionListener(new ActionListener() {
 
@@ -118,18 +117,19 @@ public class Controlador {
 		// Funció que permiteix copiar un fitxer del directori actual
 		vista.getBtnCopiar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*
-				 * Comentado por Alvaro para que funcione la otra forma // Me parece muy feo
-				 * (comentario realizado por Héctor)
-				 * 
-				 * File ruta = new File(vista.getTxtBusq().getText() +
-				 * vista.getTxtAcciones().getText()); File cp = new
-				 * File(vista.getTxtBusq().getText() + "copia.txt"); try {
-				 * Modelo.copiarArch(ruta, cp); } catch (IOException e1) { // TODO
-				 * Auto-generated catch block e1.printStackTrace(); }
-				 */
 
-				modelo.dupliArch(vista.getTxtBusq().getText());
+				File ruta = new File(vista.getTxtBusq().getText());
+				String copia = vista.getTxtBusq().getText();
+				if (copia.endsWith("/")) {
+					copia = copia.substring(0, copia.length() - 1);
+				}
+				try {
+					File cp = new File(copia + " copia");
+					Modelo.copiarArch(ruta, cp);
+				} catch (IOException e1) {
+
+					e1.printStackTrace();
+				}
 			}
 		});
 
@@ -146,7 +146,7 @@ public class Controlador {
 				}
 			}
 		});
-		
+
 		// Funció que permiteix renombrar un elemento
 		vista.getBtnCNombre().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -161,8 +161,9 @@ public class Controlador {
 
 			}
 		});
-		
-		// Funció que comprova i canvia la propietat "editable" del JEditorPane txtArMost
+
+		// Funció que comprova i canvia la propietat "editable" del JEditorPane
+		// txtArMost
 		vista.getBtnEscribir().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (vista.getTxtArMost().isEditable()) {
@@ -174,37 +175,36 @@ public class Controlador {
 
 			}
 		});
-		
-		// Funció que guarda i sobrescriu en l'arxiu que s'indique el que s'haja escrit en el txtArMost
+
+		// Funció que guarda i sobrescriu en l'arxiu que s'indique el que s'haja escrit
+		// en el txtArMost
 		vista.getBtnGuardar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-			
-				int input = JOptionPane.showConfirmDialog(null, "Quieres guardarno en un nuevo archivo");
-				
-				
-				if(input == 0) {
-					
+
+				int input = JOptionPane.showConfirmDialog(null, "Quieres guardarlo en un nuevo archivo");
+
+				if (input == 0) {
+
 					String newArch = JOptionPane.showInputDialog("Indica la ruta con el nombre del nuevo archivo");
-					if(newArch.length() > 0) {
-						
+					if (newArch != null) {
+
 						modelo.guardarcCambios(vista.getTxtArMost().getText(), newArch);
 					}
-					
-				}
-				 else if(input == 1)
-					modelo.guardarcCambios(vista.getTxtArMost().getText(), vista.getTxtBusq().getText() + vista.getTxtAcciones().getText()); // ¿Es para esto para lo que sirve?
-				
+
+				} else if (input == 1)
+					modelo.guardarcCambios(vista.getTxtArMost().getText(),
+							vista.getTxtBusq().getText() + vista.getTxtAcciones().getText()); // ¿Es para esto para lo
+																								// que sirve?
+
 			}
 		});
-	
 
 		// Funció que reinicia tots el camps de text
 		vista.getBtnReiniciar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String[] stringAr = new String[1];
 				stringAr[0] = "";
-				
+
 				vista.getTxtBusq().setText("");
 				vista.getTxtAcciones().setText("");
 				vista.getTxtEncontrar().setText("");

@@ -32,37 +32,37 @@ public class Modelo {
 		File dFile = new File(dir);
 		String[] list;
 		ArrayList<String> arch = new ArrayList<String>();
-			SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
-			if (dFile.exists()) {
-				if (dFile.isFile()) {
+		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+		if (dFile.exists()) {
+			if (dFile.isFile()) {
 
-					String[] fName = dFile.getName().split("\\.");
+				String[] fName = dFile.getName().split("\\.");
 
-					arch.add("ARCHIVO");
-					arch.add("Nombre: " + fName[0]);
-					arch.add("Extensión: " + fName[1]);
-					arch.add("Tamaño: " + dFile.getTotalSpace() + "bytes");
-					arch.add("Fecha creación: " + df.format(dFile.lastModified()));
-					arch.add("Ubicación: " + dFile.getAbsolutePath());
-
-				}
-
-				else {
-
-					list = dFile.list();
-
-					for (String file : list) {
-
-						arch.add(file);
-					}
-
-				}
-
-			} else {
-
-				arch.add("Ruta no valida");
+				arch.add("ARCHIVO");
+				arch.add("Nombre: " + fName[0]);
+				arch.add("Extensión: " + fName[1]);
+				arch.add("Tamaño: " + dFile.getTotalSpace() + "bytes");
+				arch.add("Fecha creación: " + df.format(dFile.lastModified()));
+				arch.add("Ubicación: " + dFile.getAbsolutePath());
 
 			}
+
+			else {
+
+				list = dFile.list();
+
+				for (String file : list) {
+
+					arch.add(file);
+				}
+
+			}
+
+		} else {
+
+			arch.add("Ruta no valida");
+
+		}
 
 		return arch.toArray(new String[0]);
 
@@ -70,6 +70,7 @@ public class Modelo {
 
 	/**
 	 * Lee el contenido de un archivo y lo vuelca en una variable
+	 * 
 	 * @param dir el directorio dónde se encuentra el archivo
 	 * @return String con el contenido del archivo
 	 */
@@ -111,25 +112,25 @@ public class Modelo {
 
 	/**
 	 * Inserta el contenido de un string dentro de un archivo de texto
+	 * 
 	 * @param text cadena de texto que desea introducir
-	 * @param dir dirección del archivo al que desea introducirle el texto
+	 * @param dir  dirección del archivo al que desea introducirle el texto
 	 */
 	public void guardarcCambios(String text, String dir) {
 
 		File ruta = new File(dir);
-		
-		if(!ruta.exists()) {
-			
+
+		if (!ruta.exists()) {
+
 			try {
 				ruta.createNewFile();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
-		
-		
+
 		if (ruta.isFile()) {
 
 			FileWriter fw;
@@ -152,8 +153,8 @@ public class Modelo {
 	}
 
 	/**
-	 * @param text El texto a encontrar y reemplazar 
-	 * @param palEnont la palabra a reemplazar
+	 * @param text      El texto a encontrar y reemplazar
+	 * @param palEnont  la palabra a reemplazar
 	 * @param reemplazo la palbra por la que se reemplaza
 	 * @return El texto con la palabra reemplazada
 	 */
@@ -180,8 +181,8 @@ public class Modelo {
 	// Copiar archivos por Héctor
 	/**
 	 * 
-	 * @param source a 
-	 * @param dest b
+	 * @param source a
+	 * @param dest   b
 	 * @throws IOException c
 	 */
 	public static void copiarArch(File source, File dest) throws IOException {
@@ -197,6 +198,10 @@ public class Modelo {
 			while ((length = is.read(buffer)) > 0) {
 				os.write(buffer, 0, length);
 			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+
 		} finally {
 			is.close();
 			os.close();
@@ -204,8 +209,8 @@ public class Modelo {
 	}
 
 	// copiar archivo por Alvaro;
-	
-	/** 
+
+	/**
 	 * 
 	 * @param ruta a
 	 */
@@ -255,7 +260,7 @@ public class Modelo {
 	/**
 	 * Renombra el archivo elegido
 	 * 
-	 * @param dir dirección del archivo que desea renombrar
+	 * @param dir     dirección del archivo que desea renombrar
 	 * @param newName nombre que desea ponerle al archivo
 	 */
 	public void renombArch(String dir, String newName) {
