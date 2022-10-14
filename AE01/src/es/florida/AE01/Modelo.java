@@ -14,6 +14,10 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+/**
+ * @author Alvaro
+ *
+ */
 public class Modelo {
 
 	/**
@@ -113,7 +117,19 @@ public class Modelo {
 	public void guardarcCambios(String text, String dir) {
 
 		File ruta = new File(dir);
-
+		
+		if(!ruta.exists()) {
+			
+			try {
+				ruta.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
 		if (ruta.isFile()) {
 
 			FileWriter fw;
@@ -135,6 +151,12 @@ public class Modelo {
 
 	}
 
+	/**
+	 * @param text: El texto a encontrar y reemplazar 
+	 * @param palEnont: la palbra a reemplazar
+	 * @param reemplazo: la palbra por la que se reemplaza
+	 * @return El el texto con la palabra reemplazada
+	 */
 	public String reemplazar(String text, String palEnont, String reemplazo) {
 
 		String[] list = text.split(" ");
