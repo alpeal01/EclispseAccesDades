@@ -188,8 +188,7 @@ public class Controlador {
 
 				} else if (input == 1)
 					modelo.guardarcCambios(vista.getTxtArMost().getText(),
-							vista.getTxtBusq().getText() + vista.getTxtAcciones().getText()); // ¿Es para esto para lo
-																								// que sirve?
+							vista.getTxtBusq().getText() + vista.getTxtAcciones().getText());
 
 			}
 		});

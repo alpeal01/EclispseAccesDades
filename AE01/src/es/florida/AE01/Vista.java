@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JEditorPane;
+import javax.swing.JLabel;
 
 public class Vista extends JFrame {
 
@@ -232,16 +233,20 @@ public class Vista extends JFrame {
 		contentPane.add(btnCreacion);
 
 		btnEscribir = new JButton("Escribir");
-		btnEscribir.setBounds(319, 337, 89, 23);
+		btnEscribir.setBounds(373, 339, 89, 23);
 		contentPane.add(btnEscribir);
 
 		btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(433, 337, 89, 23);
+		btnGuardar.setBounds(266, 339, 89, 23);
 		contentPane.add(btnGuardar);
 
 		btnReiniciar = new JButton("Reiniciar");
 		btnReiniciar.setBounds(32, 4, 89, 23);
 		contentPane.add(btnReiniciar);
+		
+		JLabel lblInfo = new JLabel("Indica el nombre del archivo (botones circundantes) ");
+		lblInfo.setBounds(10, 368, 306, 14);
+		contentPane.add(lblInfo);
 
 		this.setVisible(true);
 	}
