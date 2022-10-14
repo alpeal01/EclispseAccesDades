@@ -178,9 +178,26 @@ public class Controlador {
 		// Funció que guarda i sobrescriu en l'arxiu que s'indique el que s'haja escrit en el txtArMost
 		vista.getBtnGuardar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				modelo.guardarcCambios(vista.getTxtArMost().getText(), vista.getTxtBusq().getText() + vista.getTxtAcciones().getText()); // ¿Es para esto para lo que sirve?
+				
+			
+				int input = JOptionPane.showConfirmDialog(null, "Quieres guardarno en un nuevo archivo");
+				
+				
+				if(input == 0) {
+					
+					String newArch = JOptionPane.showInputDialog("Indica la ruta con el nombre del nuevo archivo");
+					if(newArch.length() > 0) {
+						
+						modelo.guardarcCambios(vista.getTxtArMost().getText(), newArch);
+					}
+					
+				}
+				 else if(input == 1)
+					modelo.guardarcCambios(vista.getTxtArMost().getText(), vista.getTxtBusq().getText() + vista.getTxtAcciones().getText()); // ¿Es para esto para lo que sirve?
+				
 			}
 		});
+	
 
 		// Funció que reinicia tots el camps de text
 		vista.getBtnReiniciar().addActionListener(new ActionListener() {
