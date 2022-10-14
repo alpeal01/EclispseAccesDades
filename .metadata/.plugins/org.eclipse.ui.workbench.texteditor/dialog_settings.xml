@@ -6,9 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="reem"/>
 		<list key="findhistory">
-			<item value="setE"/>
+			<item value="reem"/>
 			<item value="guardarcCambios"/>
 			<item value="guardar"/>
 			<item value="getBtnCreacion"/>

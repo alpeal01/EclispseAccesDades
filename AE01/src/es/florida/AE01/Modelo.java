@@ -152,10 +152,10 @@ public class Modelo {
 	}
 
 	/**
-	 * @param text: El texto a encontrar y reemplazar 
-	 * @param palEnont: la palbra a reemplazar
-	 * @param reemplazo: la palbra por la que se reemplaza
-	 * @return El el texto con la palabra reemplazada
+	 * @param text El texto a encontrar y reemplazar 
+	 * @param palEnont la palabra a reemplazar
+	 * @param reemplazo la palbra por la que se reemplaza
+	 * @return El texto con la palabra reemplazada
 	 */
 	public String reemplazar(String text, String palEnont, String reemplazo) {
 
