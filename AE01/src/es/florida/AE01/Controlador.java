@@ -146,7 +146,7 @@ public class Controlador {
 				}
 			}
 		});
-
+		
 		// Funció que permiteix renombrar un elemento
 		vista.getBtnCNombre().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
