@@ -20,18 +20,18 @@ import java.util.ArrayList;
  */
 public class Modelo {
 
-	// Lista el directiorio pasado por parametro y devuelve su contenido, si es un
-	// archivo de lectura mostrará
-	// su información.
+	/**
+	 * Lista el directiorio pasado por parametro y devuelve su contenido, si es un
+	 * archivo de lectura mostrará su información.
+	 * 
+	 * @param dir el directorio dónde se encuentra el fichero
+	 * @return String[] con los datos del fichero
+	 */
 	public String[] listFich(String dir) {
 
 		File dFile = new File(dir);
 		String[] list;
 		ArrayList<String> arch = new ArrayList<String>();
-		// Añadido esta condición para la el botón de reiniciar, con este arreglo y con la función de buscar, el JList nos dice que es nulo si queremos hacer otra búsqueda || Héctor
-		if (dir.isBlank()) {
-			arch.add(" ");
-		} else {
 			SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 			if (dFile.exists()) {
 				if (dFile.isFile()) {
@@ -63,12 +63,16 @@ public class Modelo {
 				arch.add("Ruta no valida");
 
 			}
-		}
 
 		return arch.toArray(new String[0]);
 
 	}
 
+	/**
+	 * Lee el contenido de un archivo y lo vuelca en una variable
+	 * @param dir el directorio dónde se encuentra el archivo
+	 * @return String con el contenido del archivo
+	 */
 	public String cargaContendio(String dir) {
 
 		File file = new File(dir);
@@ -105,6 +109,11 @@ public class Modelo {
 
 	}
 
+	/**
+	 * Inserta el contenido de un string dentro de un archivo de texto
+	 * @param text cadena de texto que desea introducir
+	 * @param dir dirección del archivo al que desea introducirle el texto
+	 */
 	public void guardarcCambios(String text, String dir) {
 
 		File ruta = new File(dir);
@@ -233,6 +242,12 @@ public class Modelo {
 
 	}
 
+	/**
+	 * Renombra el archivo elegido
+	 * 
+	 * @param dir dirección del archivo que desea renombrar
+	 * @param newName nombre que desea ponerle al archivo
+	 */
 	public void renombArch(String dir, String newName) {
 
 		File file = new File(dir);

@@ -82,7 +82,6 @@ public class Vista extends JFrame {
 		this.list.setEnabled(t);
 	}
 	
-	
 	public JButton getBtnReiniciar() {
 		return btnReiniciar;
 	}
