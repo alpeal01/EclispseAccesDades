@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-INDEX VERSION 1.131+C:\Users\RxRos\Desktop\EclispseAccesDades\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
+INDEX VERSION 1.131+C:\Users\alvar\Desktop\EclispseAccesDades\.metadata\.plugins\org.eclipse.jdt.core
 3768619885.index
+1865797976.index
 813050982.index
-35529040.index
-=======
-INDEX VERSION 1.131+C:\Users\Alvaro\Desktop\EclispseAccesDades\.metadata\.plugins\org.eclipse.jdt.core
->>>>>>> 4b17920e9feda6738acfca86d823fde229f402d2
+1244834554.index
 2197467751.index
-3257227184.index
-1865797976.index
-813050982.index
-3768619885.index
