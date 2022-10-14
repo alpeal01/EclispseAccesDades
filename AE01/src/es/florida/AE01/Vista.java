@@ -1,22 +1,12 @@
 package es.florida.AE01;
-
-import java.awt.EventQueue;
 import java.util.ArrayList;
-import java.util.List;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
-import javax.swing.AbstractButton;
 import javax.swing.JButton;
-import javax.swing.JTextArea;
 import javax.swing.JList;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.JEditorPane;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class Vista extends JFrame {
 
@@ -45,7 +35,7 @@ public class Vista extends JFrame {
 	public JTextField getTxtBusq() {
 		return this.txtBusq;
 	}
-	
+
 	public JTextField getTxtAcciones() {
 		return txtAcciones;
 	}
@@ -81,7 +71,7 @@ public class Vista extends JFrame {
 	public void enableList(boolean t) {
 		this.list.setEnabled(t);
 	}
-	
+
 	public JButton getBtnReiniciar() {
 		return btnReiniciar;
 	}
@@ -111,11 +101,11 @@ public class Vista extends JFrame {
 		return this.btnRemplazar;
 
 	}
-	
+
 	public JTextField getTxtReemplazar() {
 		return this.txtReemplazar;
 	}
-	
+
 	public JButton getBtnCopiar() {
 		return btnCopiar;
 	}
@@ -123,7 +113,7 @@ public class Vista extends JFrame {
 	public void setBtnCopiar(JButton btnCopiar) {
 		this.btnCopiar = btnCopiar;
 	}
-	
+
 	public JButton getBtnCreacion() {
 		return btnCreacion;
 	}
@@ -131,7 +121,7 @@ public class Vista extends JFrame {
 	public void setBtnCreacion(JButton btnCreacion) {
 		this.btnCreacion = btnCreacion;
 	}
-	
+
 	public JButton getBtnBorrar() {
 		return btnBorrar;
 	}
@@ -148,9 +138,6 @@ public class Vista extends JFrame {
 		this.btnCNombre = btnCNombre;
 	}
 
-	
-	
-
 	/**
 	 * Launch the application.
 	 */
@@ -166,8 +153,6 @@ public class Vista extends JFrame {
 //			}
 //		});
 //	}
-
-	
 
 	/**
 	 * Create the frame.
@@ -225,29 +210,29 @@ public class Vista extends JFrame {
 		btnRemplazar = new JButton("Reemplazar");
 		btnRemplazar.setBounds(449, 303, 139, 23);
 		contentPane.add(btnRemplazar);
-		
+
 		txtReemplazar = new JTextField();
 		txtReemplazar.setColumns(10);
 		txtReemplazar.setBounds(297, 304, 142, 20);
 		contentPane.add(txtReemplazar);
-		
+
 		txtAcciones = new JTextField();
 		txtAcciones.setBounds(10, 340, 232, 20);
 		contentPane.add(txtAcciones);
 		txtAcciones.setColumns(10);
-		
+
 		btnCreacion = new JButton("Crear");
 		btnCreacion.setBounds(10, 269, 89, 23);
 		contentPane.add(btnCreacion);
-		
+
 		btnEscribir = new JButton("Escribir");
 		btnEscribir.setBounds(319, 337, 89, 23);
 		contentPane.add(btnEscribir);
-		
+
 		btnGuardar = new JButton("Guardar");
 		btnGuardar.setBounds(433, 337, 89, 23);
 		contentPane.add(btnGuardar);
-		
+
 		btnReiniciar = new JButton("Reiniciar");
 		btnReiniciar.setBounds(32, 4, 89, 23);
 		contentPane.add(btnReiniciar);
