@@ -25,9 +25,9 @@ public class Modelo {
 		String[] list;
 		ArrayList<String> arch = new ArrayList<String>();
 		// Añadido esta condición para la el botón de reiniciar, con este arreglo y con la función de buscar, el JList nos dice que es nulo si queremos hacer otra búsqueda || Héctor
-		/*if (dir.isBlank()) {
+		if (dir.isBlank()) {
 			arch.add(" ");
-		} else {*/
+		} else {
 			SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 			if (dFile.exists()) {
 				if (dFile.isFile()) {
@@ -59,7 +59,7 @@ public class Modelo {
 				arch.add("Ruta no valida");
 
 			}
-		/*}*/
+		}
 
 		return arch.toArray(new String[0]);
 

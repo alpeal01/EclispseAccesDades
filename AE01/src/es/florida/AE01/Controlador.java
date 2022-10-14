@@ -59,7 +59,8 @@ public class Controlador {
 				}
 			}
 		});
-
+		
+		// Interacció en un botó que serveix per a resaltar una paraula en el text
 		vista.getBtnEncontrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -81,12 +82,13 @@ public class Controlador {
 				}
 
 				vista.getTxtArMost().setText(textFinal);
-				vista.enableList(false);
+
 
 			}
 
 		});
-
+		
+		// Funció que serveix per a reemplaçar la paraula triada per altra
 		vista.getBtnRemplazar().addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -140,7 +142,6 @@ public class Controlador {
 				if (input == 0) {
 
 					File f = new File(vista.getTxtBusq().getText());
-					System.out.println(f.getPath());
 					f.delete();
 				}
 			}
@@ -181,14 +182,19 @@ public class Controlador {
 			}
 		});
 
+		// Funció que reinicia tots el camps de text
 		vista.getBtnReiniciar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vista.getTxtBusq().setText(" ");
-				vista.getTxtAcciones().setText(" ");
-				vista.getTxtEncontrar().setText(" ");
-				vista.getTxtReemplazar().setText(" ");
-				vista.getTxtArMost().setText(" ");
-				vista.getList().setListData(modelo.listFich(vista.getTxtBusq().getText()));
+				String[] stringAr = new String[1];
+				stringAr[0] = "Imagina que esto es un espacio en blanco";
+				
+				vista.getTxtBusq().setText("");
+				vista.getTxtAcciones().setText("");
+				vista.getTxtEncontrar().setText("");
+				vista.getTxtReemplazar().setText("");
+				vista.getTxtArMost().setText("");
+				vista.getList().setListData(stringAr);
+				vista.enableList(true);
 			}
 		});
 
