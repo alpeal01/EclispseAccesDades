@@ -59,7 +59,7 @@ public class Controlador {
 		vista.getBtnEncontrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				String[] conetnt = (vista.getTxtArMost().getText().split(" "));
+				String[] conetnt = (modelo.cargaContendio(vista.getTxtBusq().getText()).split(" "));
 				String textFinal = "";
 				String busqWord = vista.getTxtEncontrar().getText();
 				for (String word : conetnt) {
