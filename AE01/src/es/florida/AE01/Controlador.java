@@ -121,7 +121,7 @@ public class Controlador {
 		// Funció que permiteix copiar un fitxer del directori actual
 		vista.getBtnCopiar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/* Comentado por Alvaro para que funcione la otra forma
+				/* Comentado por Alvaro para que funcione la otra forma // Me parece muy feo (comentario realizado por Héctor)
 				
 				File ruta = new File(vista.getTxtBusq().getText() + vista.getTxtAcciones().getText());
 				File cp = new File(vista.getTxtBusq().getText() + "copia.txt");
