@@ -1,7 +1,10 @@
 package es.florida.AE01;
+import java.awt.BorderLayout;
+import java.awt.Insets;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -27,6 +30,8 @@ public class Vista extends JFrame {
 	JButton btnGuardar;
 	JButton btnEscribir;
 	private JButton btnReiniciar;
+	private JScrollPane scrollPane;
+	private JScrollPane scrollPane_1;
 
 	public JEditorPane getTxtArMost() {
 		return this.txtArMost;
@@ -64,12 +69,6 @@ public class Vista extends JFrame {
 
 	public void setList(ArrayList<String> listFich) {
 		this.list = new JList<String>(listFich.toArray(new String[listFich.size()]));
-	}
-
-	// Intento de hacer que la jlist no funcione cuando mostramos información de un
-	// archivo (¿funciona?)
-	public void enableList(boolean t) {
-		this.list.setEnabled(t);
 	}
 
 	public JButton getBtnReiniciar() {
@@ -175,10 +174,13 @@ public class Vista extends JFrame {
 		btnBusq = new JButton("Buscar");
 		btnBusq.setBounds(508, 4, 85, 21);
 		contentPane.add(btnBusq);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 39, 142, 220);
+		contentPane.add(scrollPane);
 
 		list = new JList<String>();
-		list.setBounds(10, 39, 142, 220);
-		contentPane.add(list);
+		scrollPane.setViewportView(list);
 
 		txtEncontrar = new JTextField();
 		txtEncontrar.setBounds(297, 270, 142, 20);
@@ -188,13 +190,17 @@ public class Vista extends JFrame {
 		btnEncontrar = new JButton("Encontrar palabra");
 		btnEncontrar.setBounds(449, 269, 139, 23);
 		contentPane.add(btnEncontrar);
+		
+		scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(162, 39, 429, 220);
+		contentPane.add(scrollPane_1);
 
 		txtArMost = new JEditorPane();
+		scrollPane_1.setViewportView(txtArMost);
 		txtArMost.setEditable(false);
-		txtArMost.setBounds(162, 39, 429, 220);
-		contentPane.add(txtArMost);
 		txtArMost.setContentType("text/html");
-
+		
+		
 		btnCopiar = new JButton("Copiar");
 		btnCopiar.setBounds(131, 270, 89, 23);
 		contentPane.add(btnCopiar);

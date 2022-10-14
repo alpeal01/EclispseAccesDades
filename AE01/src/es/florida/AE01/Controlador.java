@@ -206,7 +206,6 @@ public class Controlador {
 				vista.getTxtReemplazar().setText("");
 				vista.getTxtArMost().setText("");
 				vista.getList().setListData(stringAr);
-				vista.enableList(true);
 			}
 		});
 
