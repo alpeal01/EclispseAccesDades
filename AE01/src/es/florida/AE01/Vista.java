@@ -34,6 +34,9 @@ public class Vista extends JFrame {
 	private JTextField txtReemplazar;
 	private JTextField txtAcciones;
 	JButton btnCreacion;
+	JButton btnGuardar;
+	JButton btnEscribir;
+	private JButton btnReiniciar;
 
 	public JEditorPane getTxtArMost() {
 		return this.txtArMost;
@@ -77,6 +80,30 @@ public class Vista extends JFrame {
 	// archivo (¿funciona?)
 	public void enableList(boolean t) {
 		this.list.setEnabled(t);
+	}
+	
+	public JButton getBtnReiniciar() {
+		return btnReiniciar;
+	}
+
+	public void setBtnReiniciar(JButton btnReiniciar) {
+		this.btnReiniciar = btnReiniciar;
+	}
+
+	public JButton getBtnGuardar() {
+		return btnGuardar;
+	}
+
+	public void setBtnGuardar(JButton btnGuardar) {
+		this.btnGuardar = btnGuardar;
+	}
+
+	public JButton getBtnEscribir() {
+		return btnEscribir;
+	}
+
+	public void setBtnEscribir(JButton btnEscribir) {
+		this.btnEscribir = btnEscribir;
 	}
 
 	public JButton getBtnRemplazar() {
@@ -178,6 +205,7 @@ public class Vista extends JFrame {
 		contentPane.add(btnEncontrar);
 
 		txtArMost = new JEditorPane();
+		txtArMost.setEditable(false);
 		txtArMost.setBounds(162, 39, 429, 220);
 		contentPane.add(txtArMost);
 		txtArMost.setContentType("text/html");
@@ -211,6 +239,18 @@ public class Vista extends JFrame {
 		btnCreacion = new JButton("Crear");
 		btnCreacion.setBounds(10, 269, 89, 23);
 		contentPane.add(btnCreacion);
+		
+		btnEscribir = new JButton("Escribir");
+		btnEscribir.setBounds(319, 337, 89, 23);
+		contentPane.add(btnEscribir);
+		
+		btnGuardar = new JButton("Guardar");
+		btnGuardar.setBounds(433, 337, 89, 23);
+		contentPane.add(btnGuardar);
+		
+		btnReiniciar = new JButton("Reiniciar");
+		btnReiniciar.setBounds(32, 4, 89, 23);
+		contentPane.add(btnReiniciar);
 
 		this.setVisible(true);
 	}

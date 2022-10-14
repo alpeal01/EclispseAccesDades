@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="getBtnCreacion"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="guardarcCambios"/>
+			<item value="guardar"/>
 			<item value="getBtnCreacion"/>
 			<item value="crear"/>
 			<item value="ret"/>

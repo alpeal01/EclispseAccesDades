@@ -41,7 +41,7 @@ public class Controlador {
 
 		});
 
-		// Métode que permiteix la selecció d'un element de la llista donant click
+		// Métode que permiteix la selecció d'un element de la llista fent-li click
 		vista.getList().addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -49,22 +49,18 @@ public class Controlador {
 				String texto = vista.getTxtBusq().getText(); // ./
 				String seleccionado;
 				texto.split("/");
-				seleccionado = (String) vista.getList().getSelectedValue(); // .classpath
-				System.out.println(seleccionado);
-				System.out.println(texto.indexOf(seleccionado));
-				if (texto.indexOf(seleccionado) >= 0) { // ./.classpath/ == ./.classpath/.classpath/
-					System.out.println("Already written");
+				seleccionado = (String) vista.getList().getSelectedValue();
+				if (texto.indexOf(seleccionado) >= 0) {
+					JOptionPane.showMessageDialog(null, "Ya has realizado esa selección", "Aviso", 0, null);
 				} else {
 					texto = vista.getTxtBusq().getText() + seleccionado + "/";
-					System.out.println(texto);
 					vista.getTxtBusq().setText(texto);
-				}
 
+				}
 			}
 		});
 
 		vista.getBtnEncontrar().addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent e) {
 
 				String[] conetnt = (vista.getTxtArMost().getText().split(" "));
@@ -107,12 +103,11 @@ public class Controlador {
 				try {
 					File myObj = new File(vista.getTxtBusq().getText() + vista.getTxtAcciones().getText());
 					if (myObj.createNewFile()) {
-						System.out.println("File created: " + myObj.getName());
+						JOptionPane.showMessageDialog(null, "Archivo creado con éxito");
 					} else {
-						System.out.println("File already exists.");
+						JOptionPane.showMessageDialog(null, "No se ha podido realizar", "Aviso", 0, null);
 					}
 				} catch (IOException a) {
-					System.out.println("An error occurred.");
 					a.printStackTrace();
 				}
 			}
@@ -121,18 +116,17 @@ public class Controlador {
 		// Funció que permiteix copiar un fitxer del directori actual
 		vista.getBtnCopiar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/* Comentado por Alvaro para que funcione la otra forma // Me parece muy feo (comentario realizado por Héctor)
-				
-				File ruta = new File(vista.getTxtBusq().getText() + vista.getTxtAcciones().getText());
-				File cp = new File(vista.getTxtBusq().getText() + "copia.txt");
-				try {
-					Modelo.copiarArch(ruta, cp);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				*/
-				
+				/*
+				 * Comentado por Alvaro para que funcione la otra forma // Me parece muy feo
+				 * (comentario realizado por Héctor)
+				 * 
+				 * File ruta = new File(vista.getTxtBusq().getText() +
+				 * vista.getTxtAcciones().getText()); File cp = new
+				 * File(vista.getTxtBusq().getText() + "copia.txt"); try {
+				 * Modelo.copiarArch(ruta, cp); } catch (IOException e1) { // TODO
+				 * Auto-generated catch block e1.printStackTrace(); }
+				 */
+
 				modelo.dupliArch(vista.getTxtBusq().getText());
 			}
 		});
@@ -140,30 +134,61 @@ public class Controlador {
 		// Funció que permiteix borrar un element
 		vista.getBtnBorrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int input = JOptionPane.showConfirmDialog(null, "Seguro que quieres borrar el archivo " + vista.getTxtBusq().getText() );
-					
-					if(input == 0) {
-				
-				File f = new File(vista.getTxtBusq().getText());
-				System.out.println(f.getPath());
-				f.delete();
-					}
+				int input = JOptionPane.showConfirmDialog(null,
+						"Seguro que quieres borrar el archivo " + vista.getTxtBusq().getText());
+
+				if (input == 0) {
+
+					File f = new File(vista.getTxtBusq().getText());
+					System.out.println(f.getPath());
+					f.delete();
+				}
 			}
 		});
 
 		// Funció que permiteix renombrar un elemento
 		vista.getBtnCNombre().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int input = JOptionPane.showConfirmDialog(null, "Seguro que quieres renombrar el Archivo");
-				
-				if(input == 0) {
-					
-					//funcion en M O D E L O
-					modelo.renombArch(vista.getTxtBusq().getText(),vista.getTxtAcciones().getText());
-					
+				int input = JOptionPane.showConfirmDialog(null, "Seguro que quieres renombrar el archivo");
+
+				if (input == 0) {
+
+					// funcion en M O D E L O
+					modelo.renombArch(vista.getTxtBusq().getText(), vista.getTxtAcciones().getText());
+
 				}
-				
-			
+
+			}
+		});
+		
+		// Funció que comprova i canvia la propietat "editable" del JEditorPane txtArMost
+		vista.getBtnEscribir().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (vista.getTxtArMost().isEditable()) {
+					JOptionPane.showMessageDialog(null, "El campo de texto ya está habilitado");
+				} else {
+					vista.getTxtArMost().setEditable(true);
+					JOptionPane.showMessageDialog(null, "Ahora puede escribir en el campo de texto");
+				}
+
+			}
+		});
+		
+		// Funció que guarda i sobrescriu en l'arxiu que s'indique el que s'haja escrit en el txtArMost
+		vista.getBtnGuardar().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				modelo.guardarcCambios(vista.getTxtArMost().getText(), vista.getTxtBusq().getText() + vista.getTxtAcciones().getText()); // ¿Es para esto para lo que sirve?
+			}
+		});
+
+		vista.getBtnReiniciar().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vista.getTxtBusq().setText(" ");
+				vista.getTxtAcciones().setText(" ");
+				vista.getTxtEncontrar().setText(" ");
+				vista.getTxtReemplazar().setText(" ");
+				vista.getTxtArMost().setText(" ");
+				vista.getList().setListData(modelo.listFich(vista.getTxtBusq().getText()));
 			}
 		});
 
