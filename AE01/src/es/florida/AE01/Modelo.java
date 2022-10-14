@@ -178,6 +178,12 @@ public class Modelo {
 	}
 
 	// Copiar archivos por Héctor
+	/**
+	 * 
+	 * @param source a 
+	 * @param dest b
+	 * @throws IOException c
+	 */
 	public static void copiarArch(File source, File dest) throws IOException {
 
 		InputStream is = null;
@@ -197,8 +203,12 @@ public class Modelo {
 		}
 	}
 
-	// copiar archivo por Álvaro;
-
+	// copiar archivo por Alvaro;
+	
+	/** 
+	 * 
+	 * @param ruta a
+	 */
 	public void dupliArch(String ruta) {
 
 		File dir = new File(ruta);
