@@ -1,10 +1,12 @@
 package es.florida.T1FitArch;
 
 import java.io.File;
+import java.util.ArrayList;
+
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 
-public class Sec3_5 {
+public class Sec3_6 {
 
 	public static void main(String[] args) {
 		Personaje persona;
@@ -12,7 +14,9 @@ public class Sec3_5 {
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document document = dBuilder.parse(new File("./xmlDocuments/personajes.xml"));
-
+			
+			ArrayList<Personaje> persList = new ArrayList<Personaje>();
+			
 			Element raiz = document.getDocumentElement();
 			System.out.println("Contingut XML " + raiz.getNodeName() + ":");
 			NodeList nodeList = document.getElementsByTagName("personaje");
@@ -29,12 +33,14 @@ public class Sec3_5 {
 //							.println("Armadura: " + eElement.getElementsByTagName("armadura").item(0).getTextContent());
 					Element eElement = (Element) node;
 					persona = new Personaje(
-
 							eElement.getElementsByTagName("nombre").item(0).getTextContent(),
 							Integer.parseInt(eElement.getElementsByTagName("vida").item(0).getTextContent()),
 							Integer.parseInt(eElement.getElementsByTagName("ataque").item(0).getTextContent()),
 							Integer.parseInt(eElement.getElementsByTagName("armadura").item(0).getTextContent())
 							);
+							
+					persList.add(persona);
+					
 					
 				}
 			}
