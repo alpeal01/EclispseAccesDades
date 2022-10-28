@@ -1,6 +1,7 @@
 package es.florida.T1FitArch;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,6 +10,13 @@ import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.*;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 public class Sec3_8 {
 
@@ -29,7 +37,6 @@ public class Sec3_8 {
 				 op = false;
 			 }
 			
-			 
 			 
 		 }while(op);
 		 
@@ -58,20 +65,44 @@ public class Sec3_8 {
 					 person.appendChild(nombre);
 					 
 					 Element vida = doc.createElement("vida");
-					 nombre.appendChild(doc.createTextNode(String.valueOf(personaje.vida())));
+					 vida.appendChild(doc.createTextNode(String.valueOf(personaje.vida())));
 					 person.appendChild(vida);
 					 
 					 Element ataque = doc.createElement("ataque");
-					 nombre.appendChild(doc.createTextNode(String.valueOf(personaje.nombre())));
+					 ataque.appendChild(doc.createTextNode(String.valueOf(personaje.nombre())));
 					 person.appendChild(ataque);
 					 
 					 Element armadura = doc.createElement("armadura");
-					 nombre.appendChild(doc.createTextNode(String.valueOf(personaje.armadura())));
+					 armadura.appendChild(doc.createTextNode(String.valueOf(personaje.armadura())));
 					 person.appendChild(armadura);
 
-					 
+					
+				}
+				 TransformerFactory tranFactory = TransformerFactory.newInstance();
+				 try {
+					Transformer aTransformer = tranFactory.newTransformer();
+					aTransformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
+					aTransformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+					aTransformer.setOutputProperty(OutputKeys.INDENT, "yes");
+					DOMSource source = new DOMSource(doc);
+					try {
+						FileWriter fw = new FileWriter("./xmlDocuments/personatjesNous.xml");
+						StreamResult result = new StreamResult(fw);
+						try {
+							aTransformer.transform(source, result);
+						} catch (TransformerException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						fw.close();
+						} catch (IOException e) {
+						e.printStackTrace();
+						}
 
 					
+				} catch (TransformerConfigurationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			} catch (ParserConfigurationException e) {
 				// TODO Auto-generated catch block
