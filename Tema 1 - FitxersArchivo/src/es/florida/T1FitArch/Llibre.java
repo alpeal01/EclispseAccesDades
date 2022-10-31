@@ -5,16 +5,17 @@ import java.util.Scanner;
 public class Llibre {
 	
 	 int identificador;
-	String títol;
+	String titol;
 	String autor;
 	int any;
 	String editorial;
 	int numPag;
+	
 	public int getIdentificador() {
 		return identificador;
 	}
-	public String getTítol() {
-		return títol;
+	public String getTitol() {
+		return titol;
 	}
 
 	public String getAutor() {
@@ -33,30 +34,40 @@ public class Llibre {
 		return numPag;
 	}
 	public Llibre() {
-		super();
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Indica Identificador: ");
-		this.identificador = sc.nextInt();
+		this.identificador =Integer.parseInt(sc.nextLine()) ;
 		
 		System.out.println("Indica Titulo");
-		this.títol = sc.nextLine();
+		this.titol = sc.nextLine();
 		
 		System.out.println("Indica autor");
 		this.autor = sc.nextLine();
 		
 		System.out.println("Indica any");
-		this.any = sc.nextInt();
+		this.any = Integer.parseInt(sc.nextLine()) ;
 		
 		System.out.println("Indica editorial");
 		this.editorial = sc.nextLine();
 		
 		System.out.println("Indica Numero de paginas");
-		this.numPag = sc.nextInt();
+		this.numPag = Integer.parseInt(sc.nextLine()) ;
 		
 		sc.close();
 		
 	}
+	public Llibre(String identificador, String titol, String autor, String any, String editorial, String numPag) {
+		super();
+		this.identificador = Integer.parseInt(identificador);
+		this.titol = titol;
+		this.autor = autor;
+		this.any = Integer.parseInt(any);
+		this.editorial = editorial;
+		this.numPag = Integer.parseInt(numPag);
+	}
+	
+	
 	
 	
 

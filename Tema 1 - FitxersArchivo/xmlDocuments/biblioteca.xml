@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<biblioteca>
+    <llibre id="1">
+        <titol>Lolaso</titol>
+        <autor>Antonio+</autor>
+        <any>1992</any>
+        <editorial>Campestre</editorial>
+        <numPag>200</numPag>
+    </llibre>
+</biblioteca>
