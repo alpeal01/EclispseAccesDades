@@ -36,7 +36,7 @@ public class Personaje {
 		
 		System.out.println("Indica su armadura: ");
 		this.armadura = sc.nextInt();
-		
+		sc.close();
 		
 		
 		
