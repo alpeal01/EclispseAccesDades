@@ -1,8 +1,4 @@
 INDEX VERSION 1.131+C:\Users\alvar\Desktop\EclispseAccesDades\.metadata\.plugins\org.eclipse.jdt.core
-1242435318.index
 1865797976.index
-813050982.index
-610354330.index
+1242435318.index
 1244834554.index
-2197467751.index
-3143649628.index
