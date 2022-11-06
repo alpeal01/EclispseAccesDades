@@ -79,10 +79,13 @@ public class Model {
 
 
             }
+            rs.close();
+            stmt.close();
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        
         return resultad;
 }
 
@@ -112,4 +115,5 @@ public class Model {
 		
 		return resultat.toString();
 	}
+	
 }
