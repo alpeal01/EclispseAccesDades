@@ -1,14 +1,10 @@
 package es.florida.aev2;
 
 import java.awt.HeadlessException;
-import java.awt.event.ActionListener;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
-import javax.swing.JDialog;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
+
 
 public class Controlador {
 	private Vista vista;
