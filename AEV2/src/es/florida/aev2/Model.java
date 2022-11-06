@@ -4,8 +4,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -37,35 +41,50 @@ public class Model {
 	}
 
 	public String dbConnect() {
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			this.con = DriverManager.getConnection(this.conexio, this.user, this.pswd);
-			return "Conexión establecida";
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            this.con = DriverManager.getConnection(this.conexio, this.user, this.pswd);
+            return "Conexión establecida";
 
-		} catch (Exception e) {
+        } catch (Exception e) {
 
-			e.printStackTrace();
-		}
-		return "Fallo al conectar";
+            e.printStackTrace();
+        }
+        return "Fallo al conectar";
 
-	}
+    }
 
-	public String dbDisconnect() {
+    public String dbDisconnect() {
 
-		try {
-			this.con.close();
-			return "Conexion cerrada";
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        try {
+            this.con.close();
+            return "Conexion cerrada";
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
-		return "Fallo al cerrar conexion";
-	}
+        return "Fallo al cerrar conexion";
+    }
 
-	public void dbStruc() {
+    public String dbStruc() {
+        String resultad="------Taules----";
+        try {
+            Statement stmt = this.con.createStatement();
+            ResultSet rs = stmt.executeQuery("SHOW TABLES;");
+            while(rs.next()) {
+                resultad = "\n";
+                resultad = rs.getString(0);
 
-	}
+
+
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return resultad;
+}
 
 	// describir tablas con DESCRIBE [nombre de la tabla];
 
@@ -83,5 +102,14 @@ public class Model {
 			}
 		}
 		JOptionPane.showMessageDialog(password, "Sessió iniciada");
+	}
+	
+	public String convertPassword(String cont) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+		byte[] bMissatge = cont.getBytes("UTF-8");
+
+		MessageDigest md = MessageDigest.getInstance("MD5");
+		byte[] resultat = md.digest(bMissatge);
+		
+		return resultat.toString();
 	}
 }
