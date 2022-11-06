@@ -10,7 +10,6 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
-    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
     <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
     <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilder"/>
@@ -38,4 +37,9 @@
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="java.time.Year"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="javax.swing.JDialog"/>
+    <fullyQualifiedTypeName name="javax.swing.JTextField"/>
+    <fullyQualifiedTypeName name="javax.swing.JPasswordField"/>
+    <fullyQualifiedTypeName name="es.florida.aev2.Model"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 </qualifiedTypeNameHistroy>
