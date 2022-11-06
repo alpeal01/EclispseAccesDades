@@ -1,0 +1,7 @@
+<Conexions>
+	<conexio id="1">
+	<url>jdbc:mysql://localhost:3306/books</url>
+	<user>root</user>
+	<pswd></pswd>	
+	</conexio>
+</Conexions>
