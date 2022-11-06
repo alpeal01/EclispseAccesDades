@@ -3,6 +3,8 @@ package es.florida.aev2;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import java.awt.HeadlessException;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -12,6 +14,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
@@ -64,7 +67,7 @@ public class Model {
             e.printStackTrace();
         }
 
-        return "Fallo al tancar la conexió";
+        return "Errada al tancar la conexió";
     }
 
     public String dbStruc() {
@@ -74,7 +77,7 @@ public class Model {
             ResultSet rs = stmt.executeQuery("SHOW TABLES;");
             while(rs.next()) {
                 resultad = "\n";
-                resultad = rs.getString(0);
+                resultad = rs.getString(1);
 
 
 
@@ -88,32 +91,87 @@ public class Model {
         
         return resultad;
 }
+    	
+    public void describeTable(String table) {
+    	String resultad ="-----Descripció de " + table+"-----";
+    	try {
+            Statement stmt = this.con.createStatement();
+            ResultSet rs = stmt.executeQuery("DESCRIBE "+ table+";" );
+            while(rs.next()) {
+                
+                resultad ="Camp: "+ rs.getString(1);
+                resultad = "Tipus: "+  rs.getString(2);
+                resultad = "es Nul?: " + rs.getString(3);
+                resultad = "Clau: " +  rs.getString(4);
+                resultad = "Defecte: " + rs.getString(5);
+                resultad = "Extras: " +  rs.getString(6);
+                resultad = "\n";
 
+            }
+            
+            rs.close();
+            stmt.close();
+            
+            
+    	} catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    	
+    	
+    	
+    }
+    	
 	// describir tablas con DESCRIBE [nombre de la tabla];
 
-	public void controlLogin() {
-		JTextField username = new JTextField();
-		JTextField password = new JPasswordField();
-		Object[] message = { "Username:", username, "Password:", password };
+    public void controlLogin() throws HeadlessException, NoSuchAlgorithmException, UnsupportedEncodingException {
+        dbConnect();
+        ArrayList<String> res = getUserPass();
+        dbDisconnect();
+        JTextField username = new JTextField();
+        JTextField password = new JPasswordField();
+        Object[] message = { "Username:", username, "Password:", password };
 
-		while (!username.getText().equals("h") || !password.getText().equals("h")) {
-			int option = JOptionPane.showConfirmDialog(null, message, "Login", JOptionPane.OK_CANCEL_OPTION);
-			if (!username.getText().equals("h") || !password.getText().equals("h")) {
-				JOptionPane.showMessageDialog(password, "La contrassenya o l'usuari no son correctes");
-				password.setText("");
-				username.setText("");
-			}
-		}
-		JOptionPane.showMessageDialog(password, "Sessió iniciada");
-	}
+        while (res.lastIndexOf(username.getText()) == -1 ||res.lastIndexOf(convertPassword(password.getText())) == -1) {
+            int option = JOptionPane.showConfirmDialog(null, message, "Login", JOptionPane.OK_CANCEL_OPTION);
+            if (res.lastIndexOf(username.getText()) == -1|| res.lastIndexOf(convertPassword(password.getText())) == -1) {
+                JOptionPane.showMessageDialog(password, "La contrassenya o l'usuari no son correctes");
+                password.setText("");
+                username.setText("");
+            }
+        }
+        JOptionPane.showMessageDialog(password, "Sessió iniciada");
+    }
+
+    public String convertPassword(String cont) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+        byte[] bMissatge = cont.getBytes("UTF-8");
+
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        byte[] resultat = md.digest(bMissatge);
+
+        return resultat.toString();
+    }
+
+    public ArrayList<String> getUserPass() {
+        ArrayList<String> resultad = new ArrayList<String>();
+        try {
+            Statement stmt = this.con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT (user,pass) from users;");
+            while (rs.next()) {
+                resultad.add(rs.getString(1));
+                resultad.add(rs.getString(2));
+            }
+            rs.close();
+            stmt.close();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return resultad;
+    }
 	
-	public String convertPassword(String cont) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-		byte[] bMissatge = cont.getBytes("UTF-8");
-
-		MessageDigest md = MessageDigest.getInstance("MD5");
-		byte[] resultat = md.digest(bMissatge);
-		
-		return resultat.toString();
-	}
+	
+	
 	
 }
