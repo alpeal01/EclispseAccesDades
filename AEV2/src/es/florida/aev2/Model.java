@@ -44,13 +44,13 @@ public class Model {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             this.con = DriverManager.getConnection(this.conexio, this.user, this.pswd);
-            return "Conexión establecida";
+            return "Conexió estableida";
 
         } catch (Exception e) {
 
             e.printStackTrace();
         }
-        return "Fallo al conectar";
+        return "Errada al conectar";
 
     }
 
@@ -58,13 +58,13 @@ public class Model {
 
         try {
             this.con.close();
-            return "Conexion cerrada";
+            return "Conexió tancada";
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        return "Fallo al cerrar conexion";
+        return "Fallo al tancar la conexió";
     }
 
     public String dbStruc() {
