@@ -15,7 +15,6 @@ public class Model {
 	String conexio;
 	String user;
 	String pswd;
-	Statement stmt;
 	Connection con;
 	
 	
@@ -44,7 +43,6 @@ public class Model {
 		try{
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		this.con = DriverManager.getConnection(this.conexio,this.user,this.pswd);
-		this.stmt = con.createStatement();
 		return "Conexión establecida";
 		
 		}catch(Exception e) {
@@ -58,7 +56,6 @@ public class Model {
 	public String dbDisconnect() {
 		
 		try {
-			this.stmt.close();
 			this.con.close();
 			return "Conexion cerrada";
 		} catch (SQLException e) {
