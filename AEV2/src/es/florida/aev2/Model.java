@@ -7,6 +7,7 @@ import javax.swing.JTextField;
 import java.awt.HeadlessException;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
@@ -44,84 +45,79 @@ public class Model {
 	}
 
 	public String dbConnect() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            this.con = DriverManager.getConnection(this.conexio, this.user, this.pswd);
-            return "Conexió estableida";
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			this.con = DriverManager.getConnection(this.conexio, this.user, this.pswd);
+			return "Conexió estableida";
 
-        } catch (Exception e) {
+		} catch (Exception e) {
 
-            e.printStackTrace();
-        }
-        return "Errada al conectar";
+			e.printStackTrace();
+		}
+		return "Errada al conectar";
 
-    }
+	}
 
-    public String dbDisconnect() {
+	public String dbDisconnect() {
 
-        try {
-            this.con.close();
-            return "Conexió tancada";
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+		try {
+			this.con.close();
+			return "Conexió tancada";
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-        return "Errada al tancar la conexió";
-    }
+		return "Errada al tancar la conexió";
+	}
 
-    public String dbStruc() {
-        String resultad="------Taules----";
-        try {
-            Statement stmt = this.con.createStatement();
-            ResultSet rs = stmt.executeQuery("SHOW TABLES;");
-            while(rs.next()) {
-                resultad = "\n";
-                resultad = rs.getString(1);
+	public String dbStruc() {
+		String resultad = "------Taules----";
+		try {
+			Statement stmt = this.con.createStatement();
+			ResultSet rs = stmt.executeQuery("SHOW TABLES;");
+			while (rs.next()) {
+				resultad = "\n";
+				resultad = rs.getString(1);
 
+			}
+			rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
+		return resultad;
+	}
 
-            }
-            rs.close();
-            stmt.close();
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        
-        return resultad;
-}
-    	
-    public void describeTable(String table) {
-    	String resultad ="-----Descripció de " + table+"-----";
-    	try {
-            Statement stmt = this.con.createStatement();
-            ResultSet rs = stmt.executeQuery("DESCRIBE "+ table+";" );
-            while(rs.next()) {
-                
-                resultad ="Camp: "+ rs.getString(1);
-                resultad = "Tipus: "+  rs.getString(2);
-                resultad = "es Nul?: " + rs.getString(3);
-                resultad = "Clau: " +  rs.getString(4);
-                resultad = "Defecte: " + rs.getString(5);
-                resultad = "Extras: " +  rs.getString(6);
-                resultad = "\n";
+	public void describeTable(String table) {
+		String resultad = "-----Descripció de " + table + "-----";
+		try {
+			Statement stmt = this.con.createStatement();
+			ResultSet rs = stmt.executeQuery("DESCRIBE " + table + ";");
+			while (rs.next()) {
 
-            }
-            
-            rs.close();
-            stmt.close();
-            
-            
-    	} catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    	
-    	
-    	
-    }
-    	
+				resultad = "Camp: " + rs.getString(1);
+				resultad = "Tipus: " + rs.getString(2);
+				resultad = "es Nul?: " + rs.getString(3);
+				resultad = "Clau: " + rs.getString(4);
+				resultad = "Defecte: " + rs.getString(5);
+				resultad = "Extras: " + rs.getString(6);
+				resultad = "\n";
+
+			}
+
+			rs.close();
+			stmt.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
 	// describir tablas con DESCRIBE [nombre de la tabla];
 
 //    public void controlLogin() throws HeadlessException, NoSuchAlgorithmException, UnsupportedEncodingException {
@@ -143,14 +139,32 @@ public class Model {
 //        JOptionPane.showMessageDialog(password, "Sessió iniciada");
 //    }
 
-    public String convertPassword(String cont) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        byte[] bMissatge = cont.getBytes("UTF-8");
-
-        MessageDigest md = MessageDigest.getInstance("MD5");
-        byte[] resultat = md.digest(bMissatge);
-
-        return resultat.toString();
-    }
+	public String convertPassword(String input) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+        try {
+        	 
+            // Static getInstance method is called with hashing MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+ 
+            // digest() method is called to calculate message digest
+            // of an input digest() return array of byte
+            byte[] messageDigest = md.digest(input.getBytes());
+ 
+            // Convert byte array into signum representation
+            BigInteger no = new BigInteger(1, messageDigest);
+ 
+            // Convert message digest into hex value
+            String hashtext = no.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        }
+ 
+        // For specifying wrong message digest algorithms
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+	}
 
 //    public ArrayList<String> getUserPass() {
 //        ArrayList<String> resultad = new ArrayList<String>();
@@ -170,23 +184,28 @@ public class Model {
 //
 //        return resultad;
 //    }
-	
-    public boolean compUser() {
-    	
-    	try {
-          Statement stmt = this.con.createStatement();
-          ResultSet rs = stmt.executeQuery("SELECT user,pass from users where user = ? and pass = ?;");
-          
-          
-          
-    	} catch (SQLException e) {
-//          // TODO Auto-generated catch block
-//          e.printStackTrace();
-//      }
-    	
-    	return false;
-    
-	
-	
-	
+
+	public boolean compUser(String user, String pass) {
+		System.out.println(user + " " + pass);
+		boolean line = false;
+		try {
+			dbConnect();
+			String query = "SELECT user,pass from users where user = '" + user + "' and pass = '" + pass + "';";
+			System.out.println(query);
+			Statement stmt = this.con.createStatement();
+			ResultSet rs = stmt
+					.executeQuery(query);
+					
+			line = rs.next();
+			rs.close();
+			
+		} catch (SQLException e) {
+         // TODO Auto-generated catch block
+          e.printStackTrace();
+		}
+
+		return line;
+
+	}
+
 }

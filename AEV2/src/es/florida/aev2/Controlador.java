@@ -31,13 +31,16 @@ public class Controlador {
 //		});
 		// Afegir tants gestors com acción vulga realitzar
 		//modelo.controlLogin();
-		 JTextField username = new JTextField();
-      JTextField password = new JPasswordField();
-       Object[] message = { "Username:", username, "Password:", password };
-		 int option = JOptionPane.showConfirmDialog(null, message, "Login", JOptionPane.OK_CANCEL_OPTION);
+		
+		JTextField username = new JTextField();
+	      JTextField password = new JPasswordField();
+	     
+		
 		 
-		 System.out.println(username.getText());
-		 System.out.println(password.getText());
+       Object[] message = { "Username:", username, "Password:", password };
+		int option = JOptionPane.showConfirmDialog(null, message, "Login", JOptionPane.OK_CANCEL_OPTION);
+	modelo.compUser(username.getText(), modelo.convertPassword(password.getText()));
+		
 		
 		
 	}
