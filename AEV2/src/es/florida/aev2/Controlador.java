@@ -4,6 +4,10 @@ import java.awt.HeadlessException;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 
 
 public class Controlador {
@@ -26,6 +30,15 @@ public class Controlador {
 //		}
 //		});
 		// Afegir tants gestors com acción vulga realitzar
-		modelo.controlLogin();
+		//modelo.controlLogin();
+		 JTextField username = new JTextField();
+      JTextField password = new JPasswordField();
+       Object[] message = { "Username:", username, "Password:", password };
+		 int option = JOptionPane.showConfirmDialog(null, message, "Login", JOptionPane.OK_CANCEL_OPTION);
+		 
+		 System.out.println(username.getText());
+		 System.out.println(password.getText());
+		
+		
 	}
 }

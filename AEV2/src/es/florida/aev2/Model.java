@@ -124,24 +124,24 @@ public class Model {
     	
 	// describir tablas con DESCRIBE [nombre de la tabla];
 
-    public void controlLogin() throws HeadlessException, NoSuchAlgorithmException, UnsupportedEncodingException {
-        dbConnect();
-        ArrayList<String> res = getUserPass();
-        dbDisconnect();
-        JTextField username = new JTextField();
-        JTextField password = new JPasswordField();
-        Object[] message = { "Username:", username, "Password:", password };
-
-        while (res.lastIndexOf(username.getText()) == -1 ||res.lastIndexOf(convertPassword(password.getText())) == -1) {
-            int option = JOptionPane.showConfirmDialog(null, message, "Login", JOptionPane.OK_CANCEL_OPTION);
-            if (res.lastIndexOf(username.getText()) == -1|| res.lastIndexOf(convertPassword(password.getText())) == -1) {
-                JOptionPane.showMessageDialog(password, "La contrassenya o l'usuari no son correctes");
-                password.setText("");
-                username.setText("");
-            }
-        }
-        JOptionPane.showMessageDialog(password, "Sessió iniciada");
-    }
+//    public void controlLogin() throws HeadlessException, NoSuchAlgorithmException, UnsupportedEncodingException {
+//        dbConnect();
+//        ArrayList<String> res = getUserPass();
+//        dbDisconnect();
+//        JTextField username = new JTextField();
+//        JTextField password = new JPasswordField();
+//        Object[] message = { "Username:", username, "Password:", password };
+//
+//        while (res.lastIndexOf(username.getText()) == -1 ||res.lastIndexOf(convertPassword(password.getText())) == -1) {
+//            int option = JOptionPane.showConfirmDialog(null, message, "Login", JOptionPane.OK_CANCEL_OPTION);
+//            if (res.lastIndexOf(username.getText()) == -1|| res.lastIndexOf(convertPassword(password.getText())) == -1) {
+//                JOptionPane.showMessageDialog(password, "La contrassenya o l'usuari no son correctes");
+//                password.setText("");
+//                username.setText("");
+//            }
+//        }
+//        JOptionPane.showMessageDialog(password, "Sessió iniciada");
+//    }
 
     public String convertPassword(String cont) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         byte[] bMissatge = cont.getBytes("UTF-8");
@@ -152,25 +152,40 @@ public class Model {
         return resultat.toString();
     }
 
-    public ArrayList<String> getUserPass() {
-        ArrayList<String> resultad = new ArrayList<String>();
-        try {
-            Statement stmt = this.con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT (user,pass) from users;");
-            while (rs.next()) {
-                resultad.add(rs.getString(1));
-                resultad.add(rs.getString(2));
-            }
-            rs.close();
-            stmt.close();
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        return resultad;
-    }
+//    public ArrayList<String> getUserPass() {
+//        ArrayList<String> resultad = new ArrayList<String>();
+//        try {
+//            Statement stmt = this.con.createStatement();
+//            ResultSet rs = stmt.executeQuery("SELECT user,pass from users;");
+//            while (rs.next()) {
+//                resultad.add(rs.getString(1));
+//                resultad.add(rs.getString(2));
+//            }
+//            rs.close();
+//            stmt.close();
+//        } catch (SQLException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+//
+//        return resultad;
+//    }
 	
+    public boolean compUser() {
+    	
+    	try {
+          Statement stmt = this.con.createStatement();
+          ResultSet rs = stmt.executeQuery("SELECT user,pass from users where user = ? and pass = ?;");
+          
+          
+          
+    	} catch (SQLException e) {
+//          // TODO Auto-generated catch block
+//          e.printStackTrace();
+//      }
+    	
+    	return false;
+    
 	
 	
 	

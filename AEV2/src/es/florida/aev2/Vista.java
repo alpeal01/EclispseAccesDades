@@ -16,6 +16,12 @@ public class Vista extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtQuery;
+	JButton txtExecutar ;
+	
+	public JButton getTxtExecutar() {
+		
+		return this.txtExecutar;
+	}
 
 	/**
 	 * Launch the application.
@@ -55,7 +61,7 @@ public class Vista extends JFrame {
 		lblConsultas.setBounds(81, 26, 99, 21);
 		contentPane.add(lblConsultas);
 		
-		JButton txtExecutar = new JButton("Executar");
+		txtExecutar = new JButton("Executar");
 		txtExecutar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		txtExecutar.setBounds(664, 21, 111, 31);
 		contentPane.add(txtExecutar);
