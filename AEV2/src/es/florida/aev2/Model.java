@@ -140,30 +140,30 @@ public class Model {
 //    }
 
 	public String convertPassword(String input) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        try {
-        	 
-            // Static getInstance method is called with hashing MD5
-            MessageDigest md = MessageDigest.getInstance("MD5");
- 
-            // digest() method is called to calculate message digest
-            // of an input digest() return array of byte
-            byte[] messageDigest = md.digest(input.getBytes());
- 
-            // Convert byte array into signum representation
-            BigInteger no = new BigInteger(1, messageDigest);
- 
-            // Convert message digest into hex value
-            String hashtext = no.toString(16);
-            while (hashtext.length() < 32) {
-                hashtext = "0" + hashtext;
-            }
-            return hashtext;
-        }
- 
-        // For specifying wrong message digest algorithms
-        catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
+		try {
+
+			// Static getInstance method is called with hashing MD5
+			MessageDigest md = MessageDigest.getInstance("MD5");
+
+			// digest() method is called to calculate message digest
+			// of an input digest() return array of byte
+			byte[] messageDigest = md.digest(input.getBytes());
+
+			// Convert byte array into signum representation
+			BigInteger no = new BigInteger(1, messageDigest);
+
+			// Convert message digest into hex value
+			String hashtext = no.toString(16);
+			while (hashtext.length() < 32) {
+				hashtext = "0" + hashtext;
+			}
+			return hashtext;
+		}
+
+		// For specifying wrong message digest algorithms
+		catch (NoSuchAlgorithmException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 //    public ArrayList<String> getUserPass() {
@@ -193,18 +193,33 @@ public class Model {
 			String query = "SELECT user,pass from users where user = '" + user + "' and pass = '" + pass + "';";
 			System.out.println(query);
 			Statement stmt = this.con.createStatement();
-			ResultSet rs = stmt
-					.executeQuery(query);
-					
+			ResultSet rs = stmt.executeQuery(query);
+
 			line = rs.next();
 			rs.close();
-			
+
 		} catch (SQLException e) {
-         // TODO Auto-generated catch block
-          e.printStackTrace();
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		return line;
+
+	}
+
+	public String exConsulta(String cons) throws SQLException {
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery(cons);
+		rs.last();
+		int size = rs.getRow();
+		rs.beforeFirst();
+		
+		while (rs.next()) {
+			for (int i = 0; i < size; i++) {
+				cons += rs.getString(i) + "\n";
+			}
+		}
+		return cons;
 
 	}
 
