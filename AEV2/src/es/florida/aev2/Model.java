@@ -208,12 +208,14 @@ public class Model {
 	}
 
 	public String exConsulta(String cons) throws SQLException {
-		Statement stmt = con.createStatement();
+		Statement stmt = con.prepareStatement(cons, ResultSet.TYPE_SCROLL_SENSITIVE, 
+                ResultSet.CONCUR_UPDATABLE);
 		ResultSet rs = stmt.executeQuery(cons);
 		rs.last();
 		int size = rs.getRow();
 		rs.beforeFirst();
-		
+		System.out.println(size);
+		System.out.println("a");
 		while (rs.next()) {
 			for (int i = 0; i < size; i++) {
 				cons += rs.getString(i) + "\n";

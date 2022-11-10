@@ -23,7 +23,8 @@ public class Vista extends JFrame {
 	JButton btnObrir;
 	JButton btnTancar;
 	
-
+	// No crear el setter/getter de ContentPane (hace que la aplicación no funcione)
+	
 	/**
 	 * Launch the application.
 	 */
@@ -39,7 +40,7 @@ public class Vista extends JFrame {
 //			}
 //		});
 //	}
-	// No crear el setter/getter de ContentPane (hace que la aplicación no funcione)
+
 	public JTextField getTxtQuery() {
 		return txtQuery;
 	}
