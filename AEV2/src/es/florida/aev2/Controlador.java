@@ -9,7 +9,6 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class Controlador {
@@ -27,6 +26,7 @@ public class Controlador {
 	}
 
 	public void initEventHandlers() throws HeadlessException, NoSuchAlgorithmException, UnsupportedEncodingException {
+		boolean login = true;
 //		vista."NomdeLboto".addActionListener(new ActionListener() {
 //		public void actionPerformed(ActionEvent arg0) {
 //		 //Codi que s’executa en pulsar el botó acceptar
@@ -37,14 +37,26 @@ public class Controlador {
 
 		JTextField username = new JTextField();
 		JTextField password = new JPasswordField();
+		
+		while(login) {
 		Object[] message = { "Username:", username, "Password:", password };
 		int option = JOptionPane.showConfirmDialog(null, message, "Login", JOptionPane.OK_CANCEL_OPTION);
-		modelo.compUser(username.getText(), modelo.convertPassword(password.getText()));
-
+		System.out.println(option);
+		if(modelo.compUser(username.getText(), modelo.convertPassword(password.getText())) && option == 0) {
+			
+			login = false;
+			
+		}else if(option == -1 ||option == 2 ) {
+			
+			login = false;
+		}
+		
+		
+		}
 		vista.getBtnExecutar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					vista.txtResultats.add(null, modelo.exConsulta(vista.getTxtQuery().getText()));
+					vista.txtResultats.setText( modelo.exConsulta(vista.getTxtQuery().getText()));
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -61,6 +73,18 @@ public class Controlador {
 		vista.getBtnTancar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				modelo.dbDisconnect();
+			}
+		});
+		
+		vista.getBtnShowT().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vista.txtResultats.setText(modelo.dbStruc());
+			}
+		});
+		
+		vista.getBtnShowInfo().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vista.txtResultats.setText(modelo.describeTable(vista.getTxtQuery().getText()));
 			}
 		});
 

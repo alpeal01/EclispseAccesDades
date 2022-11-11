@@ -1,10 +1,4 @@
 package es.florida.aev2;
-
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-
-import java.awt.HeadlessException;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
@@ -13,10 +7,9 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 
@@ -77,8 +70,9 @@ public class Model {
 			Statement stmt = this.con.createStatement();
 			ResultSet rs = stmt.executeQuery("SHOW TABLES;");
 			while (rs.next()) {
-				resultad = "\n";
-				resultad = rs.getString(1);
+				resultad += "\n";
+				
+				resultad += "      "+rs.getString(1);
 
 			}
 			rs.close();
@@ -91,30 +85,34 @@ public class Model {
 		return resultad;
 	}
 
-	public void describeTable(String table) {
-		String resultad = "-----Descripció de " + table + "-----";
+	public String describeTable(String table) {
+		String resultad = "-----Descripció de " + table + "-----\n";
 		try {
 			Statement stmt = this.con.createStatement();
 			ResultSet rs = stmt.executeQuery("DESCRIBE " + table + ";");
 			while (rs.next()) {
 
-				resultad = "Camp: " + rs.getString(1);
-				resultad = "Tipus: " + rs.getString(2);
-				resultad = "es Nul?: " + rs.getString(3);
-				resultad = "Clau: " + rs.getString(4);
-				resultad = "Defecte: " + rs.getString(5);
-				resultad = "Extras: " + rs.getString(6);
-				resultad = "\n";
+				resultad += "Camp: " + rs.getString(1)+"\t";
+				resultad += "Tipus: " + rs.getString(2)+"\t";;
+				resultad += "es Nul?: " + rs.getString(3)+"\t";;
+				resultad += "Clau: " + rs.getString(4)+"\t";;
+				resultad += "Defecte: " + rs.getString(5)+"\t";;
+				resultad += "Extras: " + rs.getString(6)+"\t";;
+				resultad += "\n";
 
 			}
 
 			rs.close();
 			stmt.close();
+			
+			return resultad;
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		return resultad+= "Taula no trovada";
 
 	}
 
@@ -186,12 +184,12 @@ public class Model {
 //    }
 
 	public boolean compUser(String user, String pass) {
-		System.out.println(user + " " + pass);
+		
 		boolean line = false;
 		try {
 			dbConnect();
 			String query = "SELECT user,pass from users where user = '" + user + "' and pass = '" + pass + "';";
-			System.out.println(query);
+			
 			Statement stmt = this.con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
 
@@ -211,17 +209,19 @@ public class Model {
 		Statement stmt = con.prepareStatement(cons, ResultSet.TYPE_SCROLL_SENSITIVE, 
                 ResultSet.CONCUR_UPDATABLE);
 		ResultSet rs = stmt.executeQuery(cons);
+		ResultSetMetaData rsmd = rs.getMetaData();
 		rs.last();
-		int size = rs.getRow();
+		int size = rsmd.getColumnCount();
 		rs.beforeFirst();
-		System.out.println(size);
-		System.out.println("a");
+		String line = "";
 		while (rs.next()) {
-			for (int i = 0; i < size; i++) {
-				cons += rs.getString(i) + "\n";
+			for (int i = 1; i <= size; i++) {
+				line += rsmd.getColumnName(i).toUpperCase()+": ";
+				line += rs.getString(i) + "\t|";
 			}
+			line += "\n";
 		}
-		return cons;
+		return line;
 
 	}
 

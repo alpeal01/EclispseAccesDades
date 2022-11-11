@@ -1,18 +1,18 @@
 package es.florida.aev2;
 
-import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
-import java.awt.FlowLayout;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
+
 
 public class Vista extends JFrame {
 
@@ -22,6 +22,8 @@ public class Vista extends JFrame {
 	JTextArea txtResultats;
 	JButton btnObrir;
 	JButton btnTancar;
+	JButton btnShowT;
+	JButton btnShowInfo;
 	
 	// No crear el setter/getter de ContentPane (hace que la aplicación no funcione)
 	
@@ -77,9 +79,20 @@ public class Vista extends JFrame {
 		return btnTancar;
 	}
 
-	public void setBtnTancar(JButton btnTancar) {
-		this.btnTancar = btnTancar;
-	}
+
+	
+	public JButton getBtnShowT() {
+		
+		return this.btnShowT;
+		
+	} 
+	
+	public JButton getBtnShowInfo() {
+		
+		return this.btnShowInfo;
+		
+	} 
+	
 
 	/**
 	 * Create the frame.
@@ -115,13 +128,27 @@ public class Vista extends JFrame {
 		
 		btnTancar = new JButton("Tancar conexió");
 		btnTancar.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnTancar.setBounds(622, 413, 185, 38);
+		btnTancar.setBounds(635, 413, 185, 38);
 		contentPane.add(btnTancar);
 		
 		btnObrir = new JButton("Obrir conexió");
 		btnObrir.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnObrir.setBounds(414, 413, 185, 38);
+		btnObrir.setBounds(440, 413, 185, 38);
 		contentPane.add(btnObrir);
+		
+		btnShowT = new JButton("Mostrar taules");
+		btnShowT.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnShowT.setBounds(49, 413, 185, 38);
+		contentPane.add(btnShowT);
+		
+		btnShowInfo = new JButton("Info. Taula");
+		btnShowInfo.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnShowInfo.setBounds(244, 413, 185, 38);
+		contentPane.add(btnShowInfo);
+		
+		JLabel lblInfoTabla = new JLabel("Indica el nom de la taula en el camp de la consula");
+		lblInfoTabla.setBounds(210, 456, 458, 14);
+		contentPane.add(lblInfoTabla);
 		initComponents();
 	}
 	

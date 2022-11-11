@@ -4,4 +4,10 @@
 		<item key="x" value="915"/>
 		<item key="y" value="480"/>
 	</section>
+	<section name="org.eclipse.wb.internal.core.model.property.editor.string.StringPropertyDialog">
+		<item key="x" value="794"/>
+		<item key="y" value="247"/>
+		<item key="width" value="530"/>
+		<item key="height" value="346"/>
+	</section>
 </section>
