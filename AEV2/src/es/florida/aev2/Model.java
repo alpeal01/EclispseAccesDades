@@ -79,7 +79,8 @@ public class Model {
 			stmt.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			  e.printStackTrace();
+			  resultad = "Error! al mostra las tablas DB no conectada";
 		}
 
 		return resultad;
@@ -205,15 +206,20 @@ public class Model {
 
 	}
 
-	public String exConsulta(String cons) throws SQLException {
+	public String exConsulta(String cons,Boolean option)  {
+		String line = "";
+		try {
 		Statement stmt = con.prepareStatement(cons, ResultSet.TYPE_SCROLL_SENSITIVE, 
                 ResultSet.CONCUR_UPDATABLE);
+		if(option) {
 		ResultSet rs = stmt.executeQuery(cons);
+		
+
+		
 		ResultSetMetaData rsmd = rs.getMetaData();
 		rs.last();
 		int size = rsmd.getColumnCount();
 		rs.beforeFirst();
-		String line = "";
 		while (rs.next()) {
 			for (int i = 1; i <= size; i++) {
 				line += rsmd.getColumnName(i).toUpperCase()+": ";
@@ -221,8 +227,33 @@ public class Model {
 			}
 			line += "\n";
 		}
-		return line;
-
+		
+		}else {
+			
+			int rs = stmt.executeUpdate(cons);
+			
+			if(rs == 0) {
+				
+				return "Errada! orde no indicada correctament";
+			}
+			else {
+				
+				return "Consulta realitzada correctament";
+			}
+			
+		}
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+		line = "Errada! la consulta no esta indicada correctament";
+		
 	}
+		
+		return line;
+		}
+	
+	
+	
+	
 
 }

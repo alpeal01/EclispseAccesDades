@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 public class Controlador {
 	private Vista vista;
 	private Model modelo;
+	
 
 	// El constructor rep instancia de la vista i del Model
 
@@ -55,11 +56,32 @@ public class Controlador {
 		}
 		vista.getBtnExecutar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
-					vista.txtResultats.setText( modelo.exConsulta(vista.getTxtQuery().getText()));
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				String orden = vista.getTxtQuery().getText().split(" ")[0];
+				 int dialogButton = JOptionPane.YES_NO_OPTION;
+				 String result;
+				
+				if(orden.toUpperCase().equals("SELECT")) {
+				
+				vista.txtResultats.setText( modelo.exConsulta(vista.getTxtQuery().getText(),true));
+				}
+				else if (orden.toUpperCase().equals("INSERT") || orden.toUpperCase().equals("DELETE") ||  orden.toUpperCase().equals("UPDATE")) {
+					
+					int dialogResult = JOptionPane.showConfirmDialog (null, "Estas segur de realitzar esta ordre","Perill!",dialogButton);
+					if(dialogResult == JOptionPane.YES_OPTION){
+						
+						result = modelo.exConsulta(vista.getTxtQuery().getText(),false);
+						
+						vista.txtResultats.setText(result);
+						
+						
+					 
+					}else {
+						vista.txtResultats.setText("Operació no realitzada");
+					}
+					
+				}
+				else {
+					vista.txtResultats.setText("Ordre no admitida");
 				}
 			}
 		});
