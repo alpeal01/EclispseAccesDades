@@ -80,7 +80,7 @@ public class Model {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			  e.printStackTrace();
-			  resultad = "Error! al mostra las tablas DB no conectada";
+			  resultad = "Errada! al mostrar les taules, Base de dades no conectada";
 		}
 
 		return resultad;

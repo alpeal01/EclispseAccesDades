@@ -120,7 +120,7 @@ public class Vista extends JFrame {
 		
 		btnExecutar = new JButton("Executar");
 		btnExecutar.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnExecutar.setBounds(662, 20, 111, 31);
+		btnExecutar.setBounds(665, 20, 111, 31);
 		contentPane.add(btnExecutar);
 		
 		scrollPane = new JScrollPane();
@@ -163,5 +163,6 @@ public class Vista extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setVisible(true);
+		
 		}
 }
