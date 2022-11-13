@@ -19,6 +19,9 @@ public class Model {
 	String pswd;
 	Connection con;
 
+	/**
+	 * Constructor de la classe model
+	 */
 	public Model() {
 		super();
 		try {
@@ -37,6 +40,10 @@ public class Model {
 		}
 	}
 
+	/**
+	 * Funció per a conectar en la base de dades
+	 * @return retorna un string en un error si no s'ha pogut realitzar la conexió
+	 */
 	public String dbConnect() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -50,20 +57,27 @@ public class Model {
 		return "Errada al conectar";
 
 	}
-
+	
+	/**
+	 * Funció per a desconectar en la base de dades
+	 * @return retorna un string en un error si no s'ha pogut realitzar la desconexió
+	 */
 	public String dbDisconnect() {
 
 		try {
 			this.con.close();
 			return "Conexió tancada";
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		return "Errada al tancar la conexió";
 	}
 
+	/**
+	 * Funció per a mostrar les taules que formen la base de dades
+	 * @return retorna un string en un error si no s'ha pogut realitzar la consulta
+	 */
 	public String dbStruc() {
 		String resultad = "------Taules----";
 		try {
@@ -78,14 +92,17 @@ public class Model {
 			rs.close();
 			stmt.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			  e.printStackTrace();
 			  resultad = "Errada! al mostrar les taules, Base de dades no conectada";
 		}
 
 		return resultad;
 	}
-
+	/**
+	 * Funció per a mostrar el contingut d'una taula
+	 * @param table string en el nom de la taula
+	 * @return retorna el resultat de la consulta o un error si no s'ha pogut realitzar
+	 */
 	public String describeTable(String table) {
 		String resultad = "-----Descripció de " + table + "-----\n";
 		try {
@@ -109,7 +126,6 @@ public class Model {
 			return resultad;
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -117,73 +133,38 @@ public class Model {
 
 	}
 
-	// describir tablas con DESCRIBE [nombre de la tabla];
-
-//    public void controlLogin() throws HeadlessException, NoSuchAlgorithmException, UnsupportedEncodingException {
-//        dbConnect();
-//        ArrayList<String> res = getUserPass();
-//        dbDisconnect();
-//        JTextField username = new JTextField();
-//        JTextField password = new JPasswordField();
-//        Object[] message = { "Username:", username, "Password:", password };
-//
-//        while (res.lastIndexOf(username.getText()) == -1 ||res.lastIndexOf(convertPassword(password.getText())) == -1) {
-//            int option = JOptionPane.showConfirmDialog(null, message, "Login", JOptionPane.OK_CANCEL_OPTION);
-//            if (res.lastIndexOf(username.getText()) == -1|| res.lastIndexOf(convertPassword(password.getText())) == -1) {
-//                JOptionPane.showMessageDialog(password, "La contrassenya o l'usuari no son correctes");
-//                password.setText("");
-//                username.setText("");
-//            }
-//        }
-//        JOptionPane.showMessageDialog(password, "Sessió iniciada");
-//    }
-
+	/**
+	 * Funció per a convertir la contrassenya a la encriptació MD5
+	 * @param input string que conté la contrassenya
+	 * @return retorna la contrassenya convertida a MD5
+	 * @throws NoSuchAlgorithmException
+	 * @throws UnsupportedEncodingException
+	 */
 	public String convertPassword(String input) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 		try {
 
-			// Static getInstance method is called with hashing MD5
 			MessageDigest md = MessageDigest.getInstance("MD5");
-
-			// digest() method is called to calculate message digest
-			// of an input digest() return array of byte
 			byte[] messageDigest = md.digest(input.getBytes());
 
-			// Convert byte array into signum representation
 			BigInteger no = new BigInteger(1, messageDigest);
 
-			// Convert message digest into hex value
 			String hashtext = no.toString(16);
 			while (hashtext.length() < 32) {
 				hashtext = "0" + hashtext;
 			}
 			return hashtext;
 		}
-
-		// For specifying wrong message digest algorithms
 		catch (NoSuchAlgorithmException e) {
 			throw new RuntimeException(e);
 		}
 	}
 
-//    public ArrayList<String> getUserPass() {
-//        ArrayList<String> resultad = new ArrayList<String>();
-//        try {
-//            Statement stmt = this.con.createStatement();
-//            ResultSet rs = stmt.executeQuery("SELECT user,pass from users;");
-//            while (rs.next()) {
-//                resultad.add(rs.getString(1));
-//                resultad.add(rs.getString(2));
-//            }
-//            rs.close();
-//            stmt.close();
-//        } catch (SQLException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//
-//        return resultad;
-//    }
-
+	/**
+	 * Funció per a comprobar que el usuari i la contrassenya coincidixen en les que hi ha a la base de dades
+	 * @param user
+	 * @param pass
+	 * @return 
+	 */
 	public boolean compUser(String user, String pass) {
 		
 		boolean line = false;
@@ -205,7 +186,13 @@ public class Model {
 		return line;
 
 	}
-
+	
+	/**
+	 * Funció que executa una consulta indicada en un string
+	 * @param cons
+	 * @param option
+	 * @return retorna un error o el resultat de la consulta
+	 */
 	public String exConsulta(String cons,Boolean option)  {
 		String line = "";
 		try {
@@ -234,7 +221,7 @@ public class Model {
 			
 			if(rs == 0) {
 				
-				return "Errada! orde no indicada correctament";
+				return "Errada! Ordre no indicada correctament";
 			}
 			else {
 				
@@ -245,7 +232,7 @@ public class Model {
 		
 	}catch(Exception e) {
 		e.printStackTrace();
-		line = "Errada! la consulta no esta indicada correctament";
+		line = "Errada! La consulta no esta indicada correctament";
 		
 	}
 		

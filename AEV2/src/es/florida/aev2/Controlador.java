@@ -26,6 +26,9 @@ public class Controlador {
 
 	}
 	
+	/**
+	 * Funció que controla l'inici de sessió mitjaçant un popup i un select a la base de dades per a comprobar que la informació introduïda siga correcta
+	 */
 	  void userCon() {
 		
 		JTextField username = new JTextField();
@@ -33,11 +36,14 @@ public class Controlador {
 		boolean login = true;
 		try {
 		while (login) {
+			
+			username.setText("");
+			password.setText("");
+			
 			Object[] message = { "Username:", username, "Password:", password };
 			int option = JOptionPane.showConfirmDialog(null, message, "Login", JOptionPane.OK_CANCEL_OPTION);
-			System.out.println(option);
 			if (modelo.compUser(username.getText(), modelo.convertPassword(password.getText())) && option == 0) {
-
+				
 				login = false;
 
 			} else if (option == -1 || option == 2) {
@@ -56,20 +62,20 @@ public class Controlador {
 		
 		
 	}
-
+	  /**
+	   * 
+	   * @throws HeadlessException
+	   * @throws NoSuchAlgorithmException
+	   * @throws UnsupportedEncodingException
+	   * Controlador de event que s'activa quan es pulsa un botó
+	   */
 	public void initEventHandlers() throws HeadlessException, NoSuchAlgorithmException, UnsupportedEncodingException {
-
 		
-//		vista."NomdeLboto".addActionListener(new ActionListener() {
-//		public void actionPerformed(ActionEvent arg0) {
-//		 //Codi que s’executa en pulsar el botó acceptar
-//		}
-//		});
-		// Afegir tants gestors com acción vulga realitzar
-		// modelo.controlLogin();
-
 		userCon();
 		
+		/**
+		 * Botó que executa una consulta SQL i retorna el resultat si s'ha pogut realitzar
+		 */
 		vista.getBtnExecutar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String orden = vista.getTxtQuery().getText().split(" ")[0];
@@ -99,7 +105,10 @@ public class Controlador {
 				}
 			}
 		});
-
+		
+		/**
+		 * Botó per a obrir la conexió en la base de dades
+		 */
 		vista.getBtnObrir().addActionListener(new ActionListener() {
 			String resultad;
 			
@@ -111,6 +120,9 @@ public class Controlador {
 			}
 		});
 
+		/**
+		 * Botó per a tancar la conexió en la base de dades
+		 */
 		vista.getBtnTancar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Tancar la conexion preguntant al usuari
@@ -125,13 +137,18 @@ public class Controlador {
 				}
 			}
 		});
-
+		/**
+		 * Botó que mostra les taules que formen la base de dades
+		 */
 		vista.getBtnShowT().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				vista.txtResultats.setText(modelo.dbStruc());
 			}
 		});
-
+		
+		/**
+		 * Botó que mostra el contingur d'una de les taules de la base de dades (taula indicada en el camp de text txtQuery)
+		 */
 		vista.getBtnShowInfo().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				vista.txtResultats.setText(modelo.describeTable(vista.getTxtQuery().getText()));

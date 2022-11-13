@@ -80,8 +80,6 @@ public class Vista extends JFrame {
 	public JButton getBtnTancar() {
 		return btnTancar;
 	}
-
-
 	
 	public JButton getBtnShowT() {
 		
