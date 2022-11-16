@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<persons>
+    <person id="1">
+        <nombre>Haus</nombre>
+        <edad>29</edad>
+        <job>miner</job>
+    </person>
+    <person id="2">
+        <nombre>Claud</nombre>
+        <edad>26</edad>
+        <job>martial</job>
+    </person>
+    <person id="3">
+        <nombre>Yohan</nombre>
+        <edad>27</edad>
+        <job>soldier</job>
+    </person>
+    <person id="4">
+        <nombre>Mika</nombre>
+        <edad>32</edad>
+        <job>Guard</job>
+    </person>
+    <person id="5">
+        <nombre>Crista</nombre>
+        <edad>28</edad>
+        <job>Medic</job>
+    </person>
+</persons>
