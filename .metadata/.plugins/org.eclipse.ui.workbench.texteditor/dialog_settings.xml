@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="comp"/>
+		<item key="selection" value="for"/>
 		<list key="findhistory">
+			<item value="for"/>
 			<item value="comp"/>
 			<item value="message"/>
 			<item value="dialog"/>
