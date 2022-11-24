@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<configurations>
+    <config1>
+        <url>jdbc:mysql://localhost:3306/menjars</url>
+        <user>root</user>
+        <password></password>
+    </config1>
+</configurations>
