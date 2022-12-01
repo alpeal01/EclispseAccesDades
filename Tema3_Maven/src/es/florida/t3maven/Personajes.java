@@ -143,9 +143,9 @@ public class Personajes {
 		session.beginTransaction();
 		//Ací les operacio/ns CRUD (crear, llegir, actualitzar, borrar)
 		
-		Personajes cancion = new Personajes();
-		cancion.setId(id);
-		session.delete(cancion);
+		Personajes per = new Personajes();
+		per.setId(id);
+		session.delete(per);
 		System.out.println("Personaje eliminado");
 		
 		
