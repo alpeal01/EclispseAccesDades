@@ -2207,3 +2207,155 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact antlr:antlr:j
 2022-11-30 20:24:07,753 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\alvar\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
 2022-11-30 20:24:07,755 [Worker-54: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-11-30 20:24:07,756 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\alvar\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:10:02,892 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-12-02 11:10:58,732 [Worker-33: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Tema3_Maven:Tema3_Maven:0.0.1-SNAPSHOT @ C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\pom.xml.
+2022-12-02 11:11:00,523 [Worker-33: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:11:00,524 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:11:00,527 [Worker-33: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:11:00,527 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:30:39,239 [Worker-41: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:30:39,239 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:30:39,240 [Worker-41: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:30:39,241 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:31:30,961 [Worker-41: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:31:30,962 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:31:30,963 [Worker-41: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:31:30,963 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:32:29,866 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-12-02 11:34:48,701 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:34:48,703 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:34:48,705 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:34:48,706 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:36:04,565 [Worker-36: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:36:04,566 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:36:04,567 [Worker-36: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:36:04,567 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:36:20,520 [Worker-31: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:36:20,520 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:36:20,521 [Worker-31: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:36:20,521 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:36:55,480 [Worker-22: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:36:55,481 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:36:55,482 [Worker-22: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:36:55,482 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:37:22,975 [Worker-5: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:37:22,976 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:37:22,976 [Worker-5: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:37:22,977 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:37:55,357 [Worker-27: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:37:55,358 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:37:55,359 [Worker-27: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:37:55,359 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:38:03,057 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:38:03,057 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:38:03,058 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:38:03,059 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:38:13,368 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:38:13,369 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:38:13,370 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:38:13,371 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:38:23,752 [Worker-24: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:38:23,752 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:38:23,752 [Worker-24: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:38:23,753 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:38:58,319 [Worker-30: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:38:58,320 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:38:58,321 [Worker-30: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:38:58,321 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:39:54,287 [Worker-22: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:39:54,288 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:39:54,289 [Worker-22: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:39:54,289 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:40:15,365 [Worker-9: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:40:15,365 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:40:15,366 [Worker-9: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:40:15,366 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:40:25,784 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:40:25,785 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:40:25,785 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:40:25,786 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:40:39,492 [Worker-22: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:40:39,493 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:40:39,494 [Worker-22: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:40:39,494 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:40:49,951 [Worker-4: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:40:49,952 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:40:49,953 [Worker-4: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:40:49,953 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:42:11,670 [Worker-6: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:42:11,671 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:42:11,672 [Worker-6: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:42:11,673 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:45:22,687 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:45:22,688 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:45:22,688 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:45:22,689 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:48:56,729 [Worker-36: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:48:56,730 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:48:56,730 [Worker-36: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:48:56,731 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:49:01,807 [Worker-36: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:49:01,807 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:49:01,808 [Worker-36: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:49:01,808 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:49:56,536 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:49:56,537 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:49:56,538 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:49:56,538 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:50:06,667 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-12-02 11:51:27,968 [Worker-21: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:51:27,970 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:51:27,972 [Worker-21: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:51:27,973 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:51:55,871 [Worker-11: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:51:55,871 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:51:55,872 [Worker-11: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:51:55,873 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 11:52:45,493 [Worker-31: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:52:45,493 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 11:52:45,495 [Worker-31: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 11:52:45,496 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 12:03:45,226 [Worker-37: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:03:45,227 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 12:03:45,227 [Worker-37: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:03:45,228 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 12:05:48,970 [Worker-37: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:05:48,970 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 12:05:48,972 [Worker-37: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:05:48,972 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 12:12:09,553 [Worker-43: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:12:09,553 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 12:12:09,554 [Worker-43: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:12:09,555 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 12:12:21,824 [Worker-40: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:12:21,824 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 12:12:21,827 [Worker-40: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:12:21,827 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 12:12:28,300 [Worker-40: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:12:28,301 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 12:12:28,302 [Worker-40: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:12:28,303 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 12:17:29,022 [Worker-43: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:17:29,023 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 12:17:29,024 [Worker-43: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:17:29,024 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 12:17:38,229 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:17:38,229 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 12:17:38,230 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:17:38,231 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 12:27:06,145 [Worker-47: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:27:06,145 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 12:27:06,146 [Worker-47: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:27:06,147 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 12:29:28,834 [Worker-43: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:29:28,837 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 12:29:28,838 [Worker-43: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:29:28,839 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 12:36:56,360 [Worker-52: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:36:56,361 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 12:36:56,362 [Worker-52: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:36:56,362 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2022-12-02 12:38:14,533 [Worker-57: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:38:14,534 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2022-12-02 12:38:14,535 [Worker-57: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-12-02 12:38:14,535 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources

@@ -2,11 +2,19 @@ package es.florida.t3maven;
 
 import java.io.Serializable;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+
 import org.hibernate.service.ServiceRegistry;
+
+
 
 public class Libros {
 	int id;
@@ -119,7 +127,7 @@ public class Libros {
 
 	}
 
-	public void mostrarTodo() {
+	public static void mostrarTodo() {
 		// Carrega la configuracio i crea un session factory
 
 		Configuration configuration = new Configuration().configure("hibernate2.cfg.xml");
@@ -131,18 +139,116 @@ public class Libros {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		// Ací les operacio/ns CRUD (crear, llegir, actualitzar, borrar)
+		List listaLibros =  session.createQuery("From Libros").list();
+		
 		
 
 
 		// Commit de la transacció i tanca de sessió
 		session.getTransaction().commit();
 		session.close();
+		
+		
+		for (int i = 0; i < listaLibros.size(); i++) {
+			
+			Libros lib = (Libros) listaLibros.get(i);
+			
+			System.out.println(lib.titol);
+			
+		}
 
+	}
+	
+	public static void mostraInfoLib(int id) {
+		
+		// Carrega la configuracio i crea un session factory
+		Configuration configuration = new Configuration().configure("hibernate2.cfg.xml");
+		configuration.addClass(Libros.class);
+		ServiceRegistry registry = new
+		StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+		SessionFactory sessionFactory = configuration.buildSessionFactory(registry);
+		// Obri una nova sessió de la session factory
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		//Ací les operacio/ns CRUD (crear, llegir, actualitzar, borrar)
+		
+		Libros lib = (Libros) session.get(Libros.class, id);
+
+		
+		//Commit de la transacció i tanca de sessió
+		session.getTransaction().commit();
+		session.close();
+		
+		System.out.println(lib.getId()+" "+lib.getTitol()+" "+lib.getAutor()+" "+lib.getAnyNaix()+lib.getAnyPub()+" "+lib.getEditorial()+" "+lib.getNumPag());
+		
+		
+	}
+	public static void modificarLib(Libros newLib) {
+		
+		// Carrega la configuracio i crea un session factory
+		Configuration configuration = new Configuration().configure("hibernate2.cfg.xml");
+		configuration.addClass(Libros.class);
+		ServiceRegistry registry = new
+		StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+		SessionFactory sessionFactory = configuration.buildSessionFactory(registry);
+		// Obri una nova sessió de la session factory
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		//Ací les operacio/ns CRUD (crear, llegir, actualitzar, borrar)
+		
+	
+		session.update(newLib);
+		
+		
+		//Commit de la transacció i tanca de sessió
+		session.getTransaction().commit();
+		session.close();
+		
+		System.out.println("Modificacion realizada exitosamente");
+		
+		
+	}
+	
+	public static void eliminarLib(int id) {
+		
+		
+		// Carrega la configuracio i crea un session factory
+		Configuration configuration = new Configuration().configure("hibernate2.cfg.xml");
+		configuration.addClass(Libros.class);
+		ServiceRegistry registry = new
+		StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+		SessionFactory sessionFactory = configuration.buildSessionFactory(registry);
+		// Obri una nova sessió de la session factory
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		//Ací les operacio/ns CRUD (crear, llegir, actualitzar, borrar)
+		
+		Libros lib = new Libros();
+		lib.setId(id);
+		session.delete(lib);
+		
+		
+		
+		//Commit de la transacció i tanca de sessió
+		session.getTransaction().commit();
+		session.close();
+		
+		System.out.println("Modificacion realizada exitosamente");
+		
+		
 	}
 
 	public static void main(String[] args) {
-		Libros lib = new Libros("Carlitos 2", "Romano Arpas", 1990, 2010, "Huevos", 200);
-		insert(lib);
+//		Libros lib = new Libros("Cavo del 8", "Castro rolan", 1999, 2008, "Nuevikov", 240);
+//		insert(lib);
+//		
+//		mostrarTodo();
+		
+//		mostraInfoLib(2);
+		
+//		Libros lib = new Libros(2,"Chavo del 7", "Castro rolan", 1999, 2008, "Nuevikov", 240);
+//		modificarLib(lib);
+		
 
 	}
 
