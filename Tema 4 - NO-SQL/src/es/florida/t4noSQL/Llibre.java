@@ -24,6 +24,19 @@ public class Llibre {
 		Editorial = editorial;
 		Nombre_pagines = nombre_pagines;
 	}
+	
+	public Llibre(int id, String titol, String autor, int any_naixement, int any_publicacio, String editorial,
+			int nombre_pagines) {
+		super();
+		
+		this.id = id;
+		this.titol = titol;
+		Autor = autor;
+		Any_naixement = any_naixement;
+		Any_publicacio = any_publicacio;
+		Editorial = editorial;
+		Nombre_pagines = nombre_pagines;
+	}
 
 	public int getId() {
 		return id;
