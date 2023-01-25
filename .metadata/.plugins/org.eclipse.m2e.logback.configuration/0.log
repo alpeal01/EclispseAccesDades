@@ -2817,3 +2817,4 @@ Caused by: org.eclipse.core.runtime.CoreException: Cannot determine URI for '/Te
 2023-01-02 13:05:15,364 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2023-01-02 13:05:27,357 [Worker-29: Retrieving catalog resource] INFO  o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (org.apache.hc.core5.http.NoHttpResponseException) caught when processing request to {s}->https://marketplace.eclipse.org:443
 2023-01-02 13:05:27,361 [Worker-23: Retrieving catalog resource] INFO  o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (org.apache.hc.core5.http.NoHttpResponseException) caught when processing request to {s}->https://marketplace.eclipse.org:443
+2023-01-22 12:21:40,067 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
