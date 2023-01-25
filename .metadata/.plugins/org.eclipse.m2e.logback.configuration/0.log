@@ -2827,3 +2827,65 @@ Caused by: org.eclipse.core.runtime.CoreException: Cannot determine URI for '/Te
 =======
 >>>>>>> 60fbe98a5f6fa9962183db281034a5ba9a0a6096
 >>>>>>> 6f94e6a39db54a2e1bd3063591619e57229c1207
+2023-01-25 11:46:26,178 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-01-25 11:46:50,456 [Worker-25: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Tema4-NO-SQL:Tema4-NO-SQL:0.0.1-SNAPSHOT @ C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema 4 - NO-SQL\pom.xml.
+2023-01-25 11:46:50,842 [Worker-25: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 11:46:50,843 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema 4 - NO-SQL\src\main\resources
+2023-01-25 11:46:50,845 [Worker-25: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 11:46:50,845 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema 4 - NO-SQL\src\test\resources
+2023-01-25 11:46:51,090 [Worker-25: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Tema3_Maven:Tema3_Maven:0.0.1-SNAPSHOT @ C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\pom.xml.
+2023-01-25 11:46:51,577 [Worker-25: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 11:46:51,578 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\main\resources
+2023-01-25 11:46:51,579 [Worker-25: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 11:46:51,580 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema3_Maven\src\test\resources
+2023-01-25 12:01:07,399 [Worker-40: Enabling Maven Dependency Management] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: MongoExamen:MongoExamen:0.0.1-SNAPSHOT @ C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\pom.xml.
+2023-01-25 12:01:07,532 [Worker-40: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MongoExamen/src
+2023-01-25 12:01:07,532 [Worker-40: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /MongoExamen/src/test/java because it overlaps with /MongoExamen/src
+2023-01-25 12:01:07,585 [Worker-40: Enabling Maven Dependency Management] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2023-01-25 12:01:07,606 [Worker-40: Enabling Maven Dependency Management] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: MongoExamen:MongoExamen:0.0.1-SNAPSHOT @ C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\pom.xml.
+2023-01-25 12:01:07,633 [Worker-40: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MongoExamen/src
+2023-01-25 12:01:07,634 [Worker-40: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /MongoExamen/src/test/java because it overlaps with /MongoExamen/src
+2023-01-25 12:01:07,659 [Worker-40: Enabling Maven Dependency Management] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2023-01-25 12:01:07,791 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:01:07,792 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\main\resources
+2023-01-25 12:01:07,793 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:01:07,793 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\test\resources
+2023-01-25 12:02:07,044 [Worker-40: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Tema4-NO-SQL:Tema4-NO-SQL:0.0.1-SNAPSHOT @ C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\pom.xml.
+2023-01-25 12:02:07,070 [Worker-40: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:02:07,070 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\main\resources
+2023-01-25 12:02:07,071 [Worker-40: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:02:07,071 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\test\resources
+2023-01-25 12:02:08,225 [Worker-42: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:02:08,226 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\main\resources
+2023-01-25 12:02:08,226 [Worker-42: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:02:08,227 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\test\resources
+2023-01-25 12:02:20,568 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:02:20,569 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema 4 - NO-SQL\src\main\resources
+2023-01-25 12:02:20,570 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:02:20,570 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\Tema 4 - NO-SQL\src\test\resources
+2023-01-25 12:05:33,455 [Worker-45: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Tema4-NO-SQL:Tema4-NO-SQL:0.0.1-SNAPSHOT @ C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\pom.xml.
+2023-01-25 12:05:33,477 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:05:33,477 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\main\resources
+2023-01-25 12:05:33,478 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:05:33,479 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\test\resources
+2023-01-25 12:05:34,681 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:05:34,681 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\main\resources
+2023-01-25 12:05:34,684 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:05:34,684 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\test\resources
+2023-01-25 12:19:44,593 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-01-25 12:20:05,056 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:20:05,057 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\main\resources
+2023-01-25 12:20:05,059 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:20:05,059 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\test\resources
+2023-01-25 12:20:08,390 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:20:08,390 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\main\resources
+2023-01-25 12:20:08,391 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:20:08,392 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\test\resources
+2023-01-25 12:21:43,293 [Worker-13: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:21:43,293 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\main\resources
+2023-01-25 12:21:43,294 [Worker-13: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:21:43,294 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\test\resources
+2023-01-25 12:24:33,934 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:24:33,934 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\main\resources
+2023-01-25 12:24:33,937 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-01-25 12:24:33,937 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Alvaro\Desktop\EclispseAccesDades\MongoExamen\src\test\resources

@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1664717280120
+# List of external plug-in models previously loaded. Timestamp: 1674644747813
 file:/C:/Users/Alvaro/.p2/pool/plugins/ch.qos.logback.classic_1.1.2.v20171220-1825.jar
 file:/C:/Users/Alvaro/.p2/pool/plugins/ch.qos.logback.core_1.1.2.v20160208-0839.jar
 file:/C:/Users/Alvaro/.p2/pool/plugins/ch.qos.logback.slf4j_1.1.2.v20160301-0943.jar
@@ -11,6 +11,7 @@ file:/C:/Users/Alvaro/.p2/pool/plugins/com.jcraft.jsch_0.1.55.v20190404-1902.jar
 file:/C:/Users/Alvaro/.p2/pool/plugins/com.sun.el_2.2.0.v201303151357.jar
 file:/C:/Users/Alvaro/.p2/pool/plugins/com.sun.jna_5.8.0.jar
 file:/C:/Users/Alvaro/.p2/pool/plugins/com.sun.jna.platform_5.8.0.jar
+file:/C:/Users/Alvaro/.p2/pool/plugins/de.jcup.hijson_1.2.0.jar
 file:/C:/Users/Alvaro/.p2/pool/plugins/fr.kazejiyu.discord.rpc.integration_1.2.2.jar
 file:/C:/Users/Alvaro/.p2/pool/plugins/fr.kazejiyu.discord.rpc.integration.adapters_1.2.2.jar
 file:/C:/Users/Alvaro/.p2/pool/plugins/fr.kazejiyu.discord.rpc.integration.ui.preferences_1.2.2.jar
