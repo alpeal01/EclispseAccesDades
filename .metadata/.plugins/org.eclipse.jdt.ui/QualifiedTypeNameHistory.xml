@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
     <fullyQualifiedTypeName name="java.io.FileReader"/>
@@ -44,20 +43,21 @@
     <fullyQualifiedTypeName name="antlr.collections.List"/>
     <fullyQualifiedTypeName name="org.hibernate.service.ServiceRegistry"/>
     <fullyQualifiedTypeName name="org.hibernate.mapping.List"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="com.mongodb.client.MongoClient"/>
     <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
-    <fullyQualifiedTypeName name="javax.swing.text.Document"/>
-    <fullyQualifiedTypeName name="com.mongodb.MongoClient"/>
-    <fullyQualifiedTypeName name="com.mongodb.client.MongoDatabase"/>
-    <fullyQualifiedTypeName name="com.mongodb.client.MongoCollection"/>
-    <fullyQualifiedTypeName name="org.bson.Document"/>
-    <fullyQualifiedTypeName name="com.mongodb.client.MongoCursor"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.SimpleObjectIdResolver"/>
     <fullyQualifiedTypeName name="com.mongodb.Mongo"/>
     <fullyQualifiedTypeName name="org.bson.types.ObjectId"/>
+    <fullyQualifiedTypeName name="com.mongodb.client.MongoClient"/>
+    <fullyQualifiedTypeName name="com.mongodb.MongoClient"/>
+    <fullyQualifiedTypeName name="com.mongodb.client.MongoDatabase"/>
+    <fullyQualifiedTypeName name="com.mongodb.client.MongoCollection"/>
+    <fullyQualifiedTypeName name="javax.swing.text.Document"/>
+    <fullyQualifiedTypeName name="org.bson.Document"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.mongodb.client.MongoCursor"/>
     <fullyQualifiedTypeName name="org.json.JSONObject"/>
+    <fullyQualifiedTypeName name="org.bson.conversions.Bson"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
